@@ -23,8 +23,11 @@ Why? There's technically no difference between line breaks and a new table row.
 
 ## Changelog
 
+### 1.1.2 (21.05.2015)
+- **[FIX]** Link "Change log" points to GitHub repository instead of the old log file now.
+
 ### 1.1.1 (21.05.2015)
-- Fixed warnings and errors pointed out by PhpStorm.
+- **[FIX]** Fixed warnings and errors pointed out by PhpStorm.
 
 ### 1.1.0 (21.05.2015)
 - **[NEW]** Added option to disable output of the `<table>` element.
