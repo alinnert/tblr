@@ -9,7 +9,7 @@ tabElements = $$('.tab-element .tabs .tab');
 
 function convertInput()
 {
-	const dataInputElement = $('data-input'),
+	const dataInputElement = $('#data-input'),
         tableData = dataInputElement.value !== '' ? dataInputElement.value.split('\n') : [],
         oColumnDelimiter = $('#setting-column-delimiter').value,
 	    oFillEmptyCells = $('#setting-fill-empty-cells').checked,

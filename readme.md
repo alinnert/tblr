@@ -23,6 +23,9 @@ Why? There's technically no difference between line breaks and a new table row.
 
 ## Changelog
 
+### 1.1.3 (21.05.2015)
+- **[FIX]** Fixed a typo in the source code that prevented the app from working.
+
 ### 1.1.2 (21.05.2015)
 - **[FIX]** Link "Change log" points to GitHub repository instead of the old log file now.
 
