@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>tblr ▪ html table creator</title>
+	<style>
+		@import url(window.css);
+	</style>
+</head>
+<body>
+	<main>
+		<aside>
+			<header>
+				<h1><b>tblr</b> ▪ html table creator</h1>
+			</header>
+
+			<h2>settings</h2>
+
+			<label>
+				<span>Column delimiter</span>
+				<select id="setting-column-delimiter">
+					<option value="	">tab</option>
+					<option value=" ">space</option>
+					<option value=",">, comma</option>
+					<option value=";">; semicolon</option>
+					<option value=":">: colon</option>
+				</select>
+			</label>
+			<p class="details">Select how your data is delimited within each line. If you copy your data from a spreadsheet software like Excel you want to choose 'tab'.</p>
+
+			<label>
+				<span>Fill empty cells with <code>&amp;nbsp;</code></span>
+				<input type="checkbox" id="setting-fill-empty-cells" checked />
+			</label>
+			<p class="details">Check if you want to fill table cells without any text with <code>&amp;nbsp;</code> instead. This will prevent empty lines from collapsing.</p>
+
+            <label>
+                <span>Include <code>&lt;table&gt;</code> element</span>
+                <input type="checkbox" id="setting-include-table-element" checked />
+            </label>
+
+            <label>
+                <span>First row is <code>&lt;th&gt;</code></span>
+                <input type="checkbox" id="setting-first-row-th" />
+            </label>
+
+			<h2>stats</h2>
+			<div class="info-line">
+				<div>Lines</div>
+				<div id="aside-info-lines">0</div>
+			</div>
+			<div class="info-line">
+				<div>Columns</div>
+				<div id="aside-info-columns">0</div>
+			</div>
+			<div class="info-line">
+				<div>Empty cells</div>
+				<div id="aside-info-empty-cells">0</div>
+			</div>
+
+			<h2>about tblr</h2>
+			<div class="info-line">
+				<div>Version</div>
+				<div>1.1.0</div>
+			</div>
+			<div class="info-line">
+				<div>Read changelog</div>
+				<div>
+					<a href="http://linnertmedia.de/changelog/txt/tblr.txt" target="_blank">TXT</a>,
+					<a href="http://linnertmedia.de/changelog/rss/tblr.xml" target="_blank">RSS</a>
+				</div>
+			</div>
+			<div class="info-line">
+				<div>Developer's website</div>
+				<div><a href="http://linnertmedia.de" target="_blank">linnertmedia.de</a></div>
+			</div>
+		</aside>
+
+		<section>
+            <div>
+                <header>
+                    <div>Your data</div>
+                </header>
+                <div>
+                    <textarea id="data-input" placeholder="enter or paste your data here..."></textarea>
+                </div>
+            </div>
+		</section>
+
+		<section>
+            <div class="tab-element" data-current-index="1">
+                <header class="tabs">
+                    <div class="tab current">Preview</div>
+                    <div class="tab">HTML</div>
+                </header>
+
+                <div class="tab-contents">
+                    <div class="tab-body current">
+                        <div id="code-preview"></div>
+                    </div>
+                    <div class="tab-body">
+                        <label for="code-output"></label>
+                        <textarea id="code-output" disabled></textarea>
+                    </div>
+                </div>
+            </div>
+
+		</section>
+	</main>
+
+	<script src="window.js"></script>
+</body>
+</html>

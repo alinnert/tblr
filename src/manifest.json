@@ -1,0 +1,20 @@
+{
+   "app": {
+      "background": {
+         "scripts": [ "background.js" ]
+      }
+   },
+   "author": "Andreas Linnert",
+   "description": "Generate html tables prefilled with your data.",
+   "icons": {
+      "128": "icon128.png",
+      "16": "icon16.png",
+      "32": "icon32.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArc/Dh3vVB+3UghNHdlpnE4WAsNTb9vmsg7krf/LFWItDM+u0HMd4hHR7bjR2JZt1r+ufx9ZCao8n71+J13fqBDhBSI+mjKbcJUOx8wCyNRPL3TTMmIrYliCuPq5oEDx/9+PWxkXUEET047RBVu29xl9avDsX2HK0sX49hPOPDwrd4QFvyvc7uB46kiFVchpbuyhcv/KleDerchGF3yJKDqGZaGUZyqPUnraVuC9bAm5eaPs+4c8egAZfNvhSlNdKHeZiZNc84NR69lLSXobVdiBLAdsinFNBpkZLVCHUrcdL0ihRAF4gnDKK3TB/CsWuiJFDWUn9J4bal7Fcz6KQpwIDAQAB",
+   "manifest_version": 2,
+   "name": "tblr",
+   "offline_enabled": true,
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.1.1"
+}
