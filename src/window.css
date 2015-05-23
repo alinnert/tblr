@@ -17,18 +17,20 @@ main {
 	display: flex;
 }
 main > aside {
-	padding: 1rem;
 	width: 260px;
-	overflow: auto;
     background: #f8f8f8;
+
+    display: flex;
+    flex-direction: column;
 }
 main > aside > header {
 	display: flex;
-	margin: -1rem;
 	align-items: stretch;
 	height: 40px;
 	background-color: mediumseagreen;
 	color: white;
+
+    flex: 0 0 auto;
 }
 main > aside > header * {
 	font-size: 16px;
@@ -39,46 +41,55 @@ main > aside > header > h1 {
 	padding-left: 1rem;
 	font-weight: normal;
 }
-main > aside > h2 {
+
+#sidebar-content {
+    flex: 1 1 auto;
+    overflow: auto;
+	padding: 1rem;
+}
+#sidebar-content > h2 {
 	text-transform: uppercase;
 	color: mediumseagreen;
 	font-size: 18px;
-	margin: 2rem 0 0.4rem;
+	margin: 0.4rem 0;
 }
-main > aside > label {
+#sidebar-content > h2 ~ h2 {
+    margin-top: 2rem;
+}
+#sidebar-content > label {
 	display: flex;
 	align-items: baseline;
 	margin-top: 1rem;
 }
-main > aside > label > span {
+#sidebar-content > label > span {
 	flex: 1 1 auto;
 	font-weight: bold;
 }
-main > aside > p.details {
+#sidebar-content > p.details {
 	color: gray;
 	font-size: 11px;
 	line-height: 1.5;
 	margin-top: 4px;
 }
-main > aside > p {
+#sidebar-content > p {
 	line-height: 1.6;
 	margin-bottom: 0.2rem;
 }
-main > aside a {
+#sidebar-content a {
 	color: mediumseagreen;
 }
-main > aside span code {
+#sidebar-content span code {
 	background: #eee;
 	border: 1px solid #ddd;
 	border-radius: 2px;
 	font-size: 12px;
 	padding: 2px;
 }
-main > aside > .info-line {
+#sidebar-content > .info-line {
 	display: flex;
 	padding: 0.3rem 0;
 }
-main > aside > .info-line > div:nth-child(1) {
+#sidebar-content > .info-line > div:nth-child(1) {
 	flex: 1 1 auto;
 	font-weight: bold;
 }

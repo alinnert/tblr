@@ -21,7 +21,13 @@ Why? There's technically no difference between line breaks and a new table row.
 
 
 
-## Changelog
+## Change log
+
+### 1.1.4 (23.05.2015)
+- **[CHANGE]** Updated links in the sidebar.
+- **[FIX]** Sidebar scrolls correctly now.
+- **[FIX]** Get app version dynamically from the manifest file.
+- **[FIX]** Using ES6 classes.
 
 ### 1.1.3 (21.05.2015)
 - **[FIX]** Fixed a typo in the source code that prevented the app from working.

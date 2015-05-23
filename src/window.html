@@ -14,65 +14,67 @@
 				<h1><b>tblr</b> ▪ html table creator</h1>
 			</header>
 
-			<h2>settings</h2>
+            <div id="sidebar-content">
+                <h2>settings</h2>
 
-			<label>
-				<span>Column delimiter</span>
-				<select id="setting-column-delimiter">
-					<option value="	">tab</option>
-					<option value=" ">space</option>
-					<option value=",">, comma</option>
-					<option value=";">; semicolon</option>
-					<option value=":">: colon</option>
-				</select>
-			</label>
-			<p class="details">Select how your data is delimited within each line. If you copy your data from a spreadsheet software like Excel you want to choose 'tab'.</p>
+                <label>
+                    <span>Column delimiter</span>
+                    <select id="setting-column-delimiter">
+                        <option value="	">tab</option>
+                        <option value=" ">space</option>
+                        <option value=",">, comma</option>
+                        <option value=";">; semicolon</option>
+                        <option value=":">: colon</option>
+                    </select>
+                </label>
+                <p class="details">Select how your data is delimited within each line. If you copy your data from a spreadsheet software like Excel you want to choose 'tab'.</p>
 
-			<label>
-				<span>Fill empty cells with <code>&amp;nbsp;</code></span>
-				<input type="checkbox" id="setting-fill-empty-cells" checked />
-			</label>
-			<p class="details">Check if you want to fill table cells without any text with <code>&amp;nbsp;</code> instead. This will prevent empty lines from collapsing.</p>
+                <label>
+                    <span>Fill empty cells with <code>&amp;nbsp;</code></span>
+                    <input type="checkbox" id="setting-fill-empty-cells" checked />
+                </label>
+                <p class="details">Check if you want to fill table cells without any text with <code>&amp;nbsp;</code> instead. This will prevent empty lines from collapsing.</p>
 
-            <label>
-                <span>Include <code>&lt;table&gt;</code> element</span>
-                <input type="checkbox" id="setting-include-table-element" checked />
-            </label>
+                <label>
+                    <span>Include <code>&lt;table&gt;</code> element</span>
+                    <input type="checkbox" id="setting-include-table-element" checked />
+                </label>
 
-            <label>
-                <span>First row is <code>&lt;th&gt;</code></span>
-                <input type="checkbox" id="setting-first-row-th" />
-            </label>
+                <label>
+                    <span>First row is <code>&lt;th&gt;</code></span>
+                    <input type="checkbox" id="setting-first-row-th" />
+                </label>
 
-			<h2>stats</h2>
-			<div class="info-line">
-				<div>Lines</div>
-				<div id="aside-info-lines">0</div>
-			</div>
-			<div class="info-line">
-				<div>Columns</div>
-				<div id="aside-info-columns">0</div>
-			</div>
-			<div class="info-line">
-				<div>Empty cells</div>
-				<div id="aside-info-empty-cells">0</div>
-			</div>
+                <h2>stats</h2>
+                <div class="info-line">
+                    <div>Lines</div>
+                    <div id="aside-info-lines">0</div>
+                </div>
+                <div class="info-line">
+                    <div>Columns</div>
+                    <div id="aside-info-columns">0</div>
+                </div>
+                <div class="info-line">
+                    <div>Empty cells</div>
+                    <div id="aside-info-empty-cells">0</div>
+                </div>
 
-			<h2>about tblr</h2>
-			<div class="info-line">
-				<div>Version</div>
-				<div>1.1.3</div>
-			</div>
-			<div class="info-line">
-				<div>Change log (+ source code)</div>
-				<div>
-					<a href="https://github.com/alinnert/tblr-chrome-app#changelog" target="_blank">GitHub</a>,
-				</div>
-			</div>
-			<div class="info-line">
-				<div>Developer's website</div>
-				<div><a href="http://linnertmedia.de" target="_blank">linnertmedia.de</a></div>
-			</div>
+                <h2>about tblr</h2>
+                <div class="info-line">
+                    <div>Version</div>
+                    <div id="app-version"></div>
+                </div>
+                <div class="info-line">
+                    <div>GitHub</div>
+                    <div>
+                        <a href="https://github.com/alinnert/tblr-chrome-app#changelog" target="_blank">Change log</a>
+                    </div>
+                </div>
+                <div class="info-line">
+                    <div>Website</div>
+                    <div><a href="http://linnertmedia.de" target="_blank">linnertmedia.de</a></div>
+                </div>
+            </div>
 		</aside>
 
 		<section>
