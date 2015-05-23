@@ -23,6 +23,9 @@ Why? There's technically no difference between line breaks and a new table row.
 
 ## Change log
 
+### 1.1.5 (23.05.2015)
+- **[FIX]** GitHub links were not working. In Chrome Apps `target="_blank"` is necessary for links to work.
+
 ### 1.1.4 (23.05.2015)
 - **[CHANGE]** Updated links in the sidebar.
 - **[FIX]** Sidebar scrolls correctly now.
