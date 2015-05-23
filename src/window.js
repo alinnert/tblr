@@ -120,7 +120,7 @@ class Tblr
         $('#aside-info-empty-cells').innerText = emptyCellsCount;
     }
 
-    static supportTab(event)
+    static supportTab(event)    
     {
         if (event.keyCode === 9)
         {
