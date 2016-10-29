@@ -1,142 +1,162 @@
 ﻿@font-face {
-	font-family: 'Ubuntu Mono';
-	src: local('Ubuntu Mono'), url('ubuntu-mono.ttf') format('truetype');
+    font-family: 'Ubuntu Mono';
+    src: local('Ubuntu Mono'), url('ubuntu-mono.ttf') format('truetype');
 }
 
 * {
-	margin: 0;
-	padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 main {
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
 }
+
 main > aside {
-	width: 260px;
-    background: #f8f8f8;
+    width: 280px;
+    background: #F8F8F8;
 
     display: flex;
     flex-direction: column;
 }
+
 main > aside > header {
-	display: flex;
-	align-items: stretch;
-	height: 40px;
-	background-color: mediumseagreen;
-	color: white;
+    display: flex;
+    align-items: stretch;
+    height: 40px;
+    background-color: mediumseagreen;
+    color: white;
 
     flex: 0 0 auto;
 }
+
 main > aside > header * {
-	font-size: 16px;
-	line-height: 40px;
+    font-size: 16px;
+    line-height: 40px;
 }
+
 main > aside > header > h1 {
-	flex: 1 0 auto;
-	padding-left: 1rem;
-	font-weight: normal;
+    flex: 1 0 auto;
+    padding-left: 1rem;
+    font-weight: normal;
 }
 
 #sidebar-content {
     flex: 1 1 auto;
     overflow: auto;
-	padding: 1rem;
+    padding: 1rem;
 }
+
 #sidebar-content > h2 {
-	text-transform: uppercase;
-	color: mediumseagreen;
-	font-size: 18px;
-	margin: 0.4rem 0;
+    text-transform: uppercase;
+    color: mediumseagreen;
+    font-size: 18px;
+    margin: 0.4rem 0;
 }
+
 #sidebar-content > h2 ~ h2 {
     margin-top: 2rem;
 }
+
 #sidebar-content > label {
-	display: flex;
-	align-items: baseline;
-	margin-top: 1rem;
+    display: flex;
+    align-items: baseline;
+    margin-top: 1rem;
 }
+
 #sidebar-content > label > span {
-	flex: 1 1 auto;
-	font-weight: bold;
+    flex: 1 1 auto;
+    font-weight: bold;
 }
+
 #sidebar-content > p.details {
-	color: gray;
-	font-size: 11px;
-	line-height: 1.5;
-	margin-top: 4px;
+    color: gray;
+    font-size: 11px;
+    line-height: 1.5;
+    margin-top: 4px;
 }
+
 #sidebar-content > p {
-	line-height: 1.6;
-	margin-bottom: 0.2rem;
+    line-height: 1.6;
+    margin-bottom: 0.2rem;
 }
+
 #sidebar-content a {
-	color: mediumseagreen;
+    color: mediumseagreen;
 }
+
 #sidebar-content span code {
-	background: #eee;
-	border: 1px solid #ddd;
-	border-radius: 2px;
-	font-size: 12px;
-	padding: 2px;
+    background: #EEEEEE;
+    border: 1px solid #DDDDDD;
+    border-radius: 2px;
+    font-size: 12px;
+    padding: 2px;
 }
+
 #sidebar-content > .info-line {
-	display: flex;
-	padding: 0.3rem 0;
+    display: flex;
+    padding: 0.3rem 0;
 }
+
 #sidebar-content > .info-line > div:nth-child(1) {
-	flex: 1 1 auto;
-	font-weight: bold;
+    flex: 1 1 auto;
+    font-weight: bold;
 }
 
 main > section {
-	flex: 2 0 auto;
-	position: relative;
+    flex: 2 0 auto;
+    position: relative;
 }
+
 main > section + section {
     flex: 3 0 auto;
 }
+
 main > section textarea {
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	border: none;
-	resize: none;
-	font-family: "Ubuntu Mono", monospace;
-	width: 100%;
-	box-sizing: border-box;
-	padding: 1rem;
-	outline: none;
-	tab-size: 4;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: none;
+    resize: none;
+    font-family: "Ubuntu Mono", monospace;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1rem;
+    outline: none;
+    tab-size: 4;
 }
 
 #code-output {
-	background: #333;
-	color: #ddd;
+    background: #333333;
+    color: #DDDDDD;
 }
+
 #code-preview {
-    background: #eeeeee;
+    background: #EEEEEE;
     height: 100%;
     overflow: auto;
     padding: 10px;
     box-sizing: border-box;
 }
+
 #code-preview table {
     display: inline-table;
 }
+
 #code-preview table td,
 #code-preview table th {
     padding: 5px 8px;
     border: 1px solid silver;
     background: white;
 }
+
 #code-preview table th {
     font-weight: bold;
 }
@@ -152,10 +172,12 @@ main > section > div {
     right: 0;
     bottom: 0;
 }
+
 main > section > div > header {
     flex: 0 0 auto;
     display: flex;
 }
+
 main > section > div > header > div {
     flex: 1 0 auto;
     height: 40px;
@@ -163,25 +185,31 @@ main > section > div > header > div {
     padding: 0 1rem;
     background: mediumseagreen;
     color: white;
+    font-size: 14px;
     text-transform: uppercase;
+    letter-spacing: 1px;
 }
+
 main > section > div > header > div.tab {
     text-align: center;
     box-sizing: border-box;
 }
+
 .tab-element > .tabs > .tab:hover {
-    background: #41bf78;
+    background: #41BF78;
 }
+
 .tab-element > .tabs > .tab.current {
-    font-weight: bold;
     background: seagreen;
     text-decoration: underline;
     border-bottom: 3px solid white;
 }
+
 main > section > div > header + div {
     flex: 1 0 auto;
     position: relative;
 }
+
 .tab-element > .tab-contents > .tab-body {
     position: absolute;
     top: 0;
@@ -190,6 +218,7 @@ main > section > div > header + div {
     bottom: 0;
     display: none;
 }
+
 .tab-element > .tab-contents > .tab-body.current {
     display: block;
 }

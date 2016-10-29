@@ -53,7 +53,10 @@ class Tblr {
 
     convertInput() {
         const tableData = this.inputArea.value !== '' ? this.inputArea.value.split('\n') : [];
-        const oColumnDelimiter = $('#setting-column-delimiter').value;
+        const settingColumnDelimiterValue = $('#setting-column-delimiter').value;
+        const oColumnDelimiter = settingColumnDelimiterValue.match(/^rx:/)
+            ? new RegExp(settingColumnDelimiterValue.replace(/^rx:/, ''))
+            : settingColumnDelimiterValue;
         const oFillEmptyCells = $('#setting-fill-empty-cells').checked;
         const oIncludeTableElement = $('#setting-include-table-element').checked;
         const oFirstRowTh = $('#setting-first-row-th').checked;

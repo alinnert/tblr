@@ -23,18 +23,19 @@
                         <option value="	">tab</option>
                         <option value=" ">space</option>
                         <option value="    ">4 spaces</option>
+                        <option value="rx:\s{4,}">4 or more spaces</option>
                         <option value=",">, comma</option>
                         <option value=";">; semicolon</option>
                         <option value=":">: colon</option>
                     </select>
                 </label>
-                <p class="details">Select how your data is delimited within each line. If you copy your data from a spreadsheet software like Excel you want to choose 'tab'.</p>
+                <p class="details">Select how your data is separated within each line. If you copy your data from a spreadsheet software like Excel you should choose 'tab'.</p>
 
                 <label>
                     <span>Fill empty cells with <code>&amp;nbsp;</code></span>
                     <input type="checkbox" id="setting-fill-empty-cells" checked />
                 </label>
-                <p class="details">Check if you want to fill table cells without any text with <code>&amp;nbsp;</code> instead. This will prevent empty lines from collapsing.</p>
+                <p class="details">Check this option if you want to fill table cells without content with <code>&amp;nbsp;</code> instead. This will prevent empty lines from collapsing.</p>
 
                 <label>
                     <span>Include <code>&lt;table&gt;</code> element</span>
@@ -46,7 +47,7 @@
                     <input type="checkbox" id="setting-first-row-th" />
                 </label>
 
-                <h2>stats</h2>
+                <h2>statistics</h2>
                 <div class="info-line">
                     <div>Lines</div>
                     <div id="aside-info-lines">0</div>
