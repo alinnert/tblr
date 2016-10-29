@@ -18,10 +18,11 @@
                 <h2>settings</h2>
 
                 <label>
-                    <span>Column delimiter</span>
+                    <span>Column separator</span>
                     <select id="setting-column-delimiter">
                         <option value="	">tab</option>
                         <option value=" ">space</option>
+                        <option value="    ">4 spaces</option>
                         <option value=",">, comma</option>
                         <option value=";">; semicolon</option>
                         <option value=":">: colon</option>
@@ -71,7 +72,7 @@
                     </div>
                 </div>
                 <div class="info-line">
-                    <div>Issues</div>
+                    <div>Bugs, feature requests</div>
                     <div>
                         <a href="https://github.com/alinnert/tblr-chrome-app/issues" target="_blank">GitHub Issues</a>
                     </div>
@@ -106,8 +107,8 @@
                         <div id="code-preview"></div>
                     </div>
                     <div class="tab-body">
-                        <label for="code-output"></label>
-                        <textarea id="code-output" disabled></textarea>
+                        <!--<textarea id="code-output" disabled></textarea>-->
+                        <div id="code-output"></div>
                     </div>
                 </div>
             </div>
