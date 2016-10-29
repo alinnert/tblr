@@ -94,7 +94,7 @@ class Tblr {
         const tableHtml = '<table>\n' + rowsHtml + '\n</table>';
         const noResultText = 'No data available!\n\nPlease input some data into the textarea on the left.';
 
-        $('#code-output').value = tableData.length > 0 ? (oIncludeTableElement ? tableHtml : rowsHtml) : noResultText;
+        $('#code-output').textContent = tableData.length > 0 ? (oIncludeTableElement ? tableHtml : rowsHtml) : noResultText;
         $('#code-preview').innerHTML = tableHtml;
 
         // update information section

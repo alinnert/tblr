@@ -22,6 +22,7 @@
                     <select id="setting-column-delimiter">
                         <option value="	">tab</option>
                         <option value=" ">space</option>
+                        <option value="rx:\s+">1 or more spaces</option>
                         <option value="    ">4 spaces</option>
                         <option value="rx:\s{4,}">4 or more spaces</option>
                         <option value=",">, comma</option>
@@ -67,19 +68,22 @@
                     <div id="app-version"></div>
                 </div>
                 <div class="info-line">
-                    <div>Source, Change log</div>
+                    <div>Source code + change log</div>
                     <div>
                         <a href="https://github.com/alinnert/tblr-chrome-app" target="_blank">GitHub</a>
                     </div>
                 </div>
                 <div class="info-line">
-                    <div>Bugs, feature requests</div>
+                    <div>Bugs + feature requests</div>
                     <div>
                         <a href="https://github.com/alinnert/tblr-chrome-app/issues" target="_blank">GitHub Issues</a>
                     </div>
                 </div>
+                <p class="details">
+                    I prefer to manage bug reports on GitHub since I don't get notifications when someone posts questions or bugs on Chrome Web Store. Thanks.
+                </p>
                 <div class="info-line">
-                    <div>Website</div>
+                    <div>Developer's website</div>
                     <div><a href="http://linnertmedia.de" target="_blank">linnertmedia.de</a></div>
                 </div>
             </div>
@@ -88,7 +92,7 @@
 		<section>
             <div>
                 <header>
-                    <div>Your data</div>
+                    <div>Data input</div>
                 </header>
                 <div>
                     <textarea id="data-input" placeholder="enter or paste your data here..."></textarea>
@@ -99,8 +103,8 @@
 		<section>
             <div class="tab-element" data-current-index="1">
                 <header class="tabs">
-                    <div class="tab current">Preview</div>
-                    <div class="tab">HTML</div>
+                    <div class="tab current">Table Preview</div>
+                    <div class="tab">HTML code</div>
                 </header>
 
                 <div class="tab-contents">

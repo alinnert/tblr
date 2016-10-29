@@ -24,8 +24,8 @@ Why? There's technically no difference between line breaks and a new table row.
 ## Change log
 
 ### 1.2.0 (29.10.2016)
-- **[NEW]** Add 4 spaces as new column separator.
-- **[NEW]** Add 4+ spaces as new column separator.
+- **[NEW]** Added new column separators: '1+ spaces', '4 spaces', '4+ spaces'
+- **[CHANGE]** Slightly bigger UI text, some wording changes
 - **[FIX]** Text from HTML panel couldn't be selected anymore.
 
 ### 1.1.5 (23.05.2015)
