@@ -92,10 +92,8 @@ class Tblr {
       const indent = oIncludeTableElement ? '\t' : ''
       let tableLineData = tableData[rowCounter].split(oColumnDelimiter)
       let colCounter
-      console.log('row')
       
       for (colCounter = 0; colCounter < tableLineData.length; colCounter++) {
-        console.log('col')
         if (tableLineData[colCounter] === '') {
           // fill empty cells with &nbsp;
           if (oFillEmptyCells) {
