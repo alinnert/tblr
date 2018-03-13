@@ -1,239 +1,263 @@
 ﻿@font-face {
-    font-family: 'Ubuntu Mono';
-    src: local('Ubuntu Mono'), url('ubuntu-mono.ttf') format('truetype');
+  font-family: 'Ubuntu Mono';
+  src: local('Ubuntu Mono'), url('ubuntu-mono.ttf') format('truetype');
 }
 
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 main {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
 }
 
 main > aside {
-    width: 320px;
-    background: #F8F8F8;
+  width: 360px;
+  background: #f8f8f8;
 
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 main > aside > header {
-    display: flex;
-    align-items: stretch;
-    height: 40px;
-    background-color: mediumseagreen;
-    color: white;
+  display: flex;
+  align-items: stretch;
+  height: 40px;
+  background-color: mediumseagreen;
+  color: white;
 
-    flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 main > aside > header * {
-    font-size: 16px;
-    line-height: 40px;
+  font-size: 16px;
+  line-height: 40px;
 }
 
 main > aside > header > h1 {
-    flex: 1 0 auto;
-    padding-left: 1rem;
-    font-weight: normal;
+  flex: 1 0 auto;
+  padding-left: 1rem;
+  font-weight: normal;
 }
 
 #sidebar-content {
-    flex: 1 1 auto;
-    overflow: auto;
-    padding: 1rem;
+  flex: 1 1 auto;
+  overflow: auto;
+  padding: 1rem;
 }
 
 #sidebar-content > h2 {
-    text-transform: uppercase;
-    color: mediumseagreen;
-    font-size: 18px;
-    margin: 0.4rem 0;
+  text-transform: uppercase;
+  color: mediumseagreen;
+  font-size: 18px;
+  margin: 0.4rem 0;
 }
 
 #sidebar-content > h2 ~ h2 {
-    margin-top: 2rem;
+  margin-top: 2rem;
 }
 
 #sidebar-content > label {
-    display: flex;
-    align-items: baseline;
-    margin-top: 1.2rem;
+  display: flex;
+  align-items: baseline;
+  margin-top: 1.2rem;
 }
 
 #sidebar-content > label > span {
-    flex: 1 1 auto;
-    font-weight: bold;
+  flex: 1 1 auto;
+  font-weight: bold;
 }
 
-#sidebar-content > p.details {
-    color: #444;
-    font-size: 12px;
-    line-height: 1.5;
-    margin-top: 4px;
+#sidebar-content p.details {
+  color: #444;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-top: 4px;
 }
 
 #sidebar-content > p {
-    line-height: 1.6;
-    margin-bottom: 0.2rem;
+  line-height: 1.6;
+  margin-bottom: 0.2rem;
 }
 
 #sidebar-content a {
-    color: mediumseagreen;
+  color: mediumseagreen;
 }
 
 #sidebar-content span code {
-    background: #EEEEEE;
-    border: 1px solid #DDDDDD;
-    border-radius: 2px;
-    font-size: 12px;
-    padding: 2px;
+  background: #eeeeee;
+  border: 1px solid #dddddd;
+  border-radius: 2px;
+  font-size: 12px;
+  padding: 2px;
 }
 
-#sidebar-content > .info-line {
-    display: flex;
-    margin-top: 0.8rem;
+#sidebar-content .info-table {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-row-gap: 10px;
+  margin-top: 0.8rem;
 }
 
-#sidebar-content > .info-line > div:nth-child(1) {
-    flex: 1 1 auto;
-    font-weight: bold;
+#sidebar-content .info-table--is-about {
+  grid-template-columns: 1fr auto;
+}
+
+#sidebar-content .info-table__counter {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+#sidebar-content .info-table .details {
+  grid-column-end: span 2;
+  margin-top: -5px;
+}
+
+#sidebar-content .info-table--is-about .info-table__label {
+  font-weight: bold;
+}
+
+#sidebar-content .info-table--is-about .info-table__detail {
+  text-align: right;
 }
 
 main > section {
-    flex: 2 0 auto;
-    position: relative;
+  flex: 2 0 auto;
+  position: relative;
 }
 
 main > section + section {
-    flex: 3 0 auto;
+  flex: 3 0 auto;
 }
 
 main > section textarea {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border: none;
-    resize: none;
-    font-family: "Ubuntu Mono", monospace;
-    font-size: 14px;
-    width: 100%;
-    box-sizing: border-box;
-    padding: 1rem;
-    outline: none;
-    tab-size: 4;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: none;
+  resize: none;
+  font-family: 'Ubuntu Mono', monospace;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 1rem;
+  outline: none;
+  tab-size: 4;
 }
 
 #code-output {
-    background: #333333;
-    color: #DDDDDD;
-    white-space: pre;
-    font-family: "Ubuntu Mono", monospace;
-    font-size: 14px;
-    padding: 10px;
-    line-height: 1.4;
-    user-select: text;
-    cursor: text;
-    min-height: 100%;
-    box-sizing: border-box;
-    display: inline-block;
-    min-width: 100%;
+  background: #333333;
+  color: #dddddd;
+  white-space: pre;
+  font-family: 'Ubuntu Mono', monospace;
+  font-size: 14px;
+  padding: 10px;
+  line-height: 1.4;
+  user-select: text;
+  cursor: text;
+  min-height: 100%;
+  box-sizing: border-box;
+  display: inline-block;
+  min-width: 100%;
 }
 
 #code-preview {
-    background: #EEEEEE;
-    height: 100%;
-    overflow: auto;
-    padding: 10px;
-    box-sizing: border-box;
+  background: #eeeeee;
+  height: 100%;
+  overflow: auto;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 #code-preview table {
-    display: inline-table;
+  display: inline-table;
 }
 
 #code-preview table td,
 #code-preview table th {
-    padding: 5px 8px;
-    border: 1px solid silver;
-    background: white;
+  padding: 5px 8px;
+  border: 1px solid silver;
+  background: white;
 }
 
 #code-preview table th {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 /* TABS */
 
 main > section > div {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 main > section > div > header {
-    flex: 0 0 auto;
-    display: flex;
+  flex: 0 0 auto;
+  display: flex;
+  background: mediumseagreen;
+  font-weight: 600;
 }
 
 main > section > div > header > div {
-    flex: 1 0 auto;
-    height: 40px;
-    line-height: 40px;
-    padding: 0 1rem;
-    background: mediumseagreen;
-    color: white;
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+  flex: 0 0 auto;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 1rem;
+  color: hsla(0, 0%, 100%, 0.7);
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 main > section > div > header > div.tab {
-    text-align: center;
-    box-sizing: border-box;
+  text-align: center;
+  box-sizing: border-box;
+  margin-right: 5px;
+  padding: 0 2rem;
 }
 
 .tab-element > .tabs > .tab:hover {
-    background: #41BF78;
+  background: #41bf78;
 }
 
 .tab-element > .tabs > .tab.current {
-    background: seagreen;
+  color: white;
+  background: seagreen;
+  box-shadow: 0 2px 0 hsla(0, 0%, 0%, 0.3) inset;
 }
 
 main > section > div > header + div {
-    flex: 1 0 auto;
-    position: relative;
+  flex: 1 0 auto;
+  position: relative;
 }
 
 .tab-element > .tab-contents > .tab-body {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
 }
 
 .tab-element > .tab-contents > .tab-body.current {
-    display: block;
-    overflow: auto;
+  display: block;
+  overflow: auto;
 }

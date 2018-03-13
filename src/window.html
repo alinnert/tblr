@@ -1,126 +1,135 @@
 ﻿<!DOCTYPE html>
 <html>
+
 <head>
-	<meta charset="utf-8">
-	<title>tblr ▪ html table creator</title>
-	<style>
-		@import url(window.css);
-	</style>
+  <meta charset="utf-8">
+  <title>tblr ▪ html table creator</title>
+  <link rel="stylesheet" href="window.css">
 </head>
+
 <body>
-	<main>
-		<aside>
-			<header>
-				<h1><b>tblr</b> ▪ html table creator</h1>
-			</header>
+  <main>
+    <aside>
+      <header>
+        <h1>
+          <b>tblr</b> ▪ html table creator</h1>
+      </header>
 
-            <div id="sidebar-content">
-                <h2>settings</h2>
+      <div id="sidebar-content">
+        <h2>settings</h2>
 
-                <label>
-                    <span>Column separator</span>
-                    <select id="setting-column-delimiter">
-                        <option value="	">tab</option>
-                        <option value=" ">space</option>
-                        <option value="rx:\s+">1 or more spaces</option>
-                        <option value="    ">4 spaces</option>
-                        <option value="rx:\s{4,}">4 or more spaces</option>
-                        <option value=",">, comma</option>
-                        <option value=";">; semicolon</option>
-                        <option value=":">: colon</option>
-                    </select>
-                </label>
-                <p class="details">Select how your data is separated within each line. If you copy your data from a spreadsheet software like Excel you should choose 'tab'.</p>
+        <label>
+          <span>Column separator</span>
+          <select id="setting-column-delimiter">
+            <option value="	">tab</option>
+            <option value=" ">space</option>
+            <option value="rx: +">1 or more spaces</option>
+            <option value="    ">4 spaces</option>
+            <option value="rx: {4,}">4 or more spaces</option>
+            <option value=",">, comma</option>
+            <option value=";">; semicolon</option>
+            <option value=":">: colon</option>
+            <option value="|">| pipe</option>
+          </select>
+        </label>
+        <p class="details">Select how your data is separated within each line. If you copy your data from a spreadsheet software like Excel
+          you should choose 'tab'.</p>
 
-                <label>
-                    <span>Fill empty cells with <code>&amp;nbsp;</code></span>
-                    <input type="checkbox" id="setting-fill-empty-cells" checked />
-                </label>
-                <p class="details">Check this option if you want to fill table cells without content with <code>&amp;nbsp;</code> instead. This will prevent empty lines from collapsing.</p>
+        <label>
+          <span>Fill empty cells with
+            <code>&amp;nbsp;</code>
+          </span>
+          <input type="checkbox" id="setting-fill-empty-cells" checked>
+        </label>
+        <p class="details">Check this option if you want to fill table cells without content with
+          <code>&amp;nbsp;</code> instead. This will prevent empty lines from collapsing.</p>
 
-                <label>
-                    <span>Include <code>&lt;table&gt;</code> element</span>
-                    <input type="checkbox" id="setting-include-table-element" checked />
-                </label>
+        <label>
+          <span>Generate
+            <code>&lt;table&gt;</code> element</span>
+          <input type="checkbox" id="setting-include-table-element" checked>
+        </label>
 
-                <label>
-                    <span>First row is <code>&lt;th&gt;</code></span>
-                    <input type="checkbox" id="setting-first-row-th" />
-                </label>
+        <label>
+          <span>First row is
+            <code>&lt;th&gt;</code>
+          </span>
+          <input type="checkbox" id="setting-first-row-th">
+        </label>
 
-                <h2>statistics</h2>
-                <div class="info-line">
-                    <div>Lines</div>
-                    <div id="aside-info-lines">0</div>
-                </div>
-                <div class="info-line">
-                    <div>Columns</div>
-                    <div id="aside-info-columns">0</div>
-                </div>
-                <div class="info-line">
-                    <div>Empty cells</div>
-                    <div id="aside-info-empty-cells">0</div>
-                </div>
+        <label>
+          <span>First column is
+            <code>&lt;th&gt;</code>
+          </span>
+          <input type="checkbox" id="setting-first-col-th">
+        </label>
 
-                <h2>about tblr</h2>
-                <div class="info-line">
-                    <div>Version</div>
-                    <div id="app-version"></div>
-                </div>
-                <div class="info-line">
-                    <div>Source code + change log</div>
-                    <div>
-                        <a href="https://github.com/alinnert/tblr-chrome-app" target="_blank">GitHub</a>
-                    </div>
-                </div>
-                <div class="info-line">
-                    <div>Bugs + feature requests</div>
-                    <div>
-                        <a href="https://github.com/alinnert/tblr-chrome-app/issues" target="_blank">GitHub Issues</a>
-                    </div>
-                </div>
-                <p class="details">
-                    I prefer to manage bug reports on GitHub since I don't get notifications when someone posts questions or bugs on Chrome Web Store. Thanks.
-                </p>
-                <div class="info-line">
-                    <div>Developer's website</div>
-                    <div><a href="http://linnertmedia.de" target="_blank">linnertmedia.de</a></div>
-                </div>
-            </div>
-		</aside>
+        <h2>statistics</h2>
+        <div class="info-table">
+          <div class="info-table__counter" id="aside-info-lines">0</div>
+          <div class="info-table__label">lines</div>
+          <div class="info-table__counter" id="aside-info-columns">0</div>
+          <div class="info-table__label">columns</div>
+          <div class="info-table__counter" id="aside-info-empty-cells">0</div>
+          <div class="info-table__label">empty cells</div>
+        </div>
 
-		<section>
-            <div>
-                <header>
-                    <div>Data input</div>
-                </header>
-                <div>
-                    <textarea id="data-input" placeholder="enter or paste your data here..."></textarea>
-                </div>
-            </div>
-		</section>
+        <h2>about tblr</h2>
+        <div class="info-table info-table--is-about">
+          <div class="info-table__label">Version</div>
+          <div class="info-table__detail" id="app-version"></div>
+          <div class="info-table__label">Source code + change log</div>
+          <div class="info-table__detail">
+            <a href="https://github.com/alinnert/tblr-chrome-app" target="_blank">GitHub</a>
+          </div>
+          <div class="info-table__label">Bugs + feature requests</div>
+          <div class="info-table__detail">
+            <a href="https://github.com/alinnert/tblr-chrome-app/issues" target="_blank">GitHub Issues</a>
+          </div>
+          <p class="details">
+            I prefer to manage bug reports on GitHub since I don't get notifications when someone posts questions or bugs on Chrome Web
+            Store. Thanks.
+          </p>
+          <div class="info-table__label">Developer's website</div>
+          <div class="info-table__detail">
+            <a href="http://linnertmedia.de" target="_blank">linnertmedia.de</a>
+          </div>
+        </div>
+      </div>
+    </aside>
 
-		<section>
-            <div class="tab-element" data-current-index="1">
-                <header class="tabs">
-                    <div class="tab current">Table Preview</div>
-                    <div class="tab">HTML code</div>
-                </header>
+    <section>
+      <div>
+        <header>
+          <div>Data input</div>
+        </header>
+        <div>
+          <textarea id="data-input" placeholder="enter or paste your data here..."></textarea>
+        </div>
+      </div>
+    </section>
 
-                <div class="tab-contents">
-                    <div class="tab-body current">
-                        <div id="code-preview"></div>
-                    </div>
-                    <div class="tab-body">
-                        <!--<textarea id="code-output" disabled></textarea>-->
-                        <div id="code-output"></div>
-                    </div>
-                </div>
-            </div>
+    <section>
+      <div class="tab-element" data-current-index="1">
+        <header class="tabs">
+          <div class="tab current">Preview</div>
+          <div class="tab">HTML code</div>
+        </header>
 
-		</section>
-	</main>
+        <div class="tab-contents">
+          <div class="tab-body current">
+            <div id="code-preview"></div>
+          </div>
+          <div class="tab-body">
+            <div id="code-output"></div>
+          </div>
+        </div>
+      </div>
 
-	<script src="window.js"></script>
+    </section>
+  </main>
+
+  <script src="window.js"></script>
 </body>
+
 </html>
