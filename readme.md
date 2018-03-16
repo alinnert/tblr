@@ -1,4 +1,4 @@
-# tblr - Chrome Packaged App
+# tblr - html table creator for Chrome OS
 
 ## Description
 
@@ -16,9 +16,15 @@ You can also see some statistics about your data like:
 
 ## Known issues
 
+### No support for line breaks
+
 It's not supported to paste tables from _Microsoft Office Excel_ that include line breaks.
 
 Why? There's technically no difference between line breaks and a new table row.
+
+### Packaged Apps on non-Chrome OS devices
+
+Google dropped support for Packaged Apps on non-Chrome OS devices. Therefore, it's already on my radar to port this app to a PWA.
 
 ## Links
 
