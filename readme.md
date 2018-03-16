@@ -14,6 +14,12 @@ You can also see some statistics about your data like:
 * number of columns
 * number of empty cells (cells without any data)
 
+## Screenshots
+
+![](tblr-preview.png)
+
+![](tblr-code.png)
+
 ## Known issues
 
 ### No support for line breaks
