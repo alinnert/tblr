@@ -1,3 +1,5 @@
+![](src/icon128.png)
+
 # tblr - html table creator for Chrome OS
 
 ## Description
