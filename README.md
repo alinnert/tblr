@@ -1,6 +1,4 @@
-![](src/icon128.png)
-
-# tblr - html table creator for Chrome OS
+# <img src="src/icon128.png" alt="App-Logo" width="64" height="64"> tblr - html table creator for Chrome OS
 
 ## Description
 
