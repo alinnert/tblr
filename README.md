@@ -14,6 +14,10 @@ You can also see some statistics about your data like:
 * number of columns
 * number of empty cells (cells without any data)
 
+## Status
+
+I have plans to convert this into a regular web application (possibly a PWA). But I'm working on other projects right now.
+
 ## Screenshots
 
 ![](tblr-preview.png)
