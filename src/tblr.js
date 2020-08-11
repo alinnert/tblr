@@ -25,7 +25,7 @@ const tblr = {
     tblr.convertInput()
   },
 
-  get version() { return '1.3.0' },
+  get version() { return '1.3.1' },
 
   prepareEvents () {
     tblr.inputArea.addEventListener(
