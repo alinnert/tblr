@@ -14,9 +14,8 @@ jobs:
       uses: actions/checkout@v1
     
     - name: Deploy
-      uses: JamesIves/github-pages-deploy-action@master
-      env:
-        ACCESS_TOKEN: ${{ secrets.GH_PAT }}
-        BASE_BRANCH: dev
+      uses: JamesIves/github-pages-deploy-action@3.5.9
+      with:
+        GITHUB_TOKEN: ${{ secrets.GH_PAT }}
         BRANCH: gh-pages
         FOLDER: src
