@@ -16,7 +16,7 @@
       </header>
 
       <div id="sidebar-content">
-        <h2>settings</h2>
+        <h2>Settings</h2>
 
         <label>
           <span>Column separator</span>
@@ -32,8 +32,10 @@
             <option value="|">| pipe</option>
           </select>
         </label>
-        <p class="details">Select how your data is separated within each line. If you copy your data from a spreadsheet software like Excel
-          you should choose 'tab'.</p>
+        <p class="details">
+          Select how your data is separated within each line.
+          If you copy your data from a spreadsheet software like Excel you should choose 'tab'.
+        </p>
 
         <label>
           <span>Fill empty cells with
@@ -41,8 +43,10 @@
           </span>
           <input type="checkbox" id="setting-fill-empty-cells" checked>
         </label>
-        <p class="details">Check this option if you want to fill table cells without content with
-          <code>&amp;nbsp;</code> instead. This will prevent empty lines from collapsing.</p>
+        <p class="details">
+          Check this option if you want to fill table cells without content with <code>&amp;nbsp;</code> instead.
+          This will prevent empty lines from collapsing in HTML with default settings.
+        </p>
 
         <label>
           <span>Generate
@@ -64,7 +68,7 @@
           <input type="checkbox" id="setting-first-col-th">
         </label>
 
-        <h2>statistics</h2>
+        <h2>Statistics</h2>
         <div class="info-table">
           <div class="info-table__counter" id="aside-info-lines">0</div>
           <div class="info-table__label">lines</div>
@@ -74,23 +78,19 @@
           <div class="info-table__label">empty cells</div>
         </div>
 
-        <h2>about tblr</h2>
+        <h2>About tblr</h2>
         <div class="info-table info-table--is-about">
           <div class="info-table__label">Version</div>
           <div class="info-table__detail" id="app-version"></div>
-          <div class="info-table__label">Source code + change log</div>
+          <div class="info-table__label">Source code, change log</div>
           <div class="info-table__detail">
             <a href="https://github.com/alinnert/tblr-chrome-app" target="_blank">GitHub</a>
           </div>
-          <div class="info-table__label">Bugs + feature requests</div>
+          <div class="info-table__label">Bugs, feature requests</div>
           <div class="info-table__detail">
             <a href="https://github.com/alinnert/tblr-chrome-app/issues" target="_blank">GitHub Issues</a>
           </div>
-          <p class="details">
-            I prefer to manage bug reports on GitHub since I don't get notifications when someone posts questions or bugs on Chrome Web
-            Store. Thanks.
-          </p>
-          <div class="info-table__label">Developer's website</div>
+          <div class="info-table__label">My website</div>
           <div class="info-table__detail">
             <a href="http://linnertmedia.de" target="_blank">linnertmedia.de</a>
           </div>
@@ -101,7 +101,7 @@
     <section>
       <div>
         <header>
-          <div>Data input</div>
+          <div>Input</div>
         </header>
         <div>
           <textarea id="data-input" placeholder="enter or paste your data here..."></textarea>
@@ -112,7 +112,7 @@
     <section>
       <div class="tab-element" data-current-index="1">
         <header class="tabs">
-          <div class="tab current">Preview</div>
+          <div class="tab current">Table preview</div>
           <div class="tab">HTML code</div>
         </header>
 

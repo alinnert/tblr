@@ -13,69 +13,67 @@ function nodeListIndexOf(list, element) {
   return -1
 }
 
-class Tblr {
-  constructor() {
-    this.inputArea = $('#data-input')
-    this.sidebarAreaSelectElements = $$('main > aside select')
-    this.sidebarAreaCheckboxElements = $$('main > aside input[type=checkbox]')
-    this.tabElements = $$('.tab-element .tabs .tab')
+const tblr = {
+  init () {
+    tblr.inputArea = $('#data-input')
+    tblr.sidebarAreaSelectElements = $$('main > aside select')
+    tblr.sidebarAreaCheckboxElements = $$('main > aside input[type=checkbox]')
+    tblr.tabElements = $$('.tab-element .tabs .tab')
 
-    this.prepareEvents()
-    this.displayVersion()
-    this.convertInput()
-  }
+    tblr.prepareEvents()
+    tblr.displayVersion()
+    tblr.convertInput()
+  },
 
-  get version() {
-    return chrome.runtime.getManifest().version
-  }
+  get version() { return '1.3.0' },
 
-  prepareEvents() {
-    this.inputArea.addEventListener(
+  prepareEvents () {
+    tblr.inputArea.addEventListener(
       'input',
-      event => this.convertInput(event),
+      event => tblr.convertInput(event),
       false
     )
-    this.inputArea.addEventListener(
+    tblr.inputArea.addEventListener(
       'keydown',
       event => {
-        Tblr.supportTab(event)
-        this.forwardEvents(event)
+        tblr.supportTab(event)
+        tblr.forwardEvents(event)
       },
       false
     )
 
-    for (let i = 0; i < this.tabElements.length; i++) {
-      this.tabElements[i].addEventListener(
+    for (let i = 0; i < tblr.tabElements.length; i++) {
+      tblr.tabElements[i].addEventListener(
         'click',
-        event => Tblr.changeTab(event),
+        event => tblr.changeTab(event),
         false
       )
     }
 
-    for (let i = 0; i < this.sidebarAreaSelectElements.length; i++) {
-      this.sidebarAreaSelectElements[i].addEventListener(
+    for (let i = 0; i < tblr.sidebarAreaSelectElements.length; i++) {
+      tblr.sidebarAreaSelectElements[i].addEventListener(
         'change',
-        event => this.convertInput(event),
+        event => tblr.convertInput(event),
         false
       )
     }
 
-    for (let i = 0; i < this.sidebarAreaCheckboxElements.length; i++) {
-      this.sidebarAreaCheckboxElements[i].addEventListener(
+    for (let i = 0; i < tblr.sidebarAreaCheckboxElements.length; i++) {
+      tblr.sidebarAreaCheckboxElements[i].addEventListener(
         'click',
-        event => this.convertInput(event),
+        event => tblr.convertInput(event),
         false
       )
     }
-  }
+  },
 
-  displayVersion() {
-    $('#app-version').innerText = this.version
-  }
+  displayVersion () {
+    $('#app-version').innerText = tblr.version
+  },
 
-  convertInput() {
+  convertInput () {
     const tableData =
-      this.inputArea.value !== '' ? this.inputArea.value.split('\n') : []
+      tblr.inputArea.value !== '' ? tblr.inputArea.value.split('\n') : []
     const settingColumnDelimiterValue = $('#setting-column-delimiter').value
     const oColumnDelimiter = settingColumnDelimiterValue.match(/^rx:/)
       ? new RegExp(settingColumnDelimiterValue.replace(/^rx:/, ''))
@@ -139,9 +137,9 @@ class Tblr {
     $('#aside-info-lines').innerText = rowCounter
     $('#aside-info-columns').innerText = maxColumnsCount
     $('#aside-info-empty-cells').innerText = emptyCellsCount
-  }
+  },
 
-  static supportTab(event) {
+  supportTab (event) {
     if (event.keyCode === 9) {
       event.preventDefault()
 
@@ -155,16 +153,16 @@ class Tblr {
       event.currentTarget.selectionStart = event.currentTarget.selectionEnd =
         start + 1
     }
-  }
+  },
 
-  forwardEvents() {
+  forwardEvents () {
     const evt = document.createEvent('HTMLEvents')
 
     evt.initEvent('input', false, true)
-    this.inputArea.dispatchEvent(evt)
-  }
+    tblr.inputArea.dispatchEvent(evt)
+  },
 
-  static changeTab(event) {
+  changeTab (event) {
     const clickedTab = event.currentTarget
     const tabElement = clickedTab.parentElement.parentElement
     const allTabs = tabElement.querySelectorAll('.tabs .tab')
@@ -183,4 +181,4 @@ class Tblr {
   }
 }
 
-new Tblr()
+tblr.init()

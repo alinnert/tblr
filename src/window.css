@@ -6,10 +6,13 @@
 * {
   margin: 0;
   padding: 0;
+  user-select: none;
 }
 
 body {
-  font-size: 14px;
+  --header-height: 50px;
+  font-family: system-ui;
+  font-size: 18px;
 }
 
 main {
@@ -22,9 +25,8 @@ main {
 }
 
 main > aside {
-  width: 360px;
+  width: 400px;
   background: #f8f8f8;
-
   display: flex;
   flex-direction: column;
 }
@@ -32,16 +34,15 @@ main > aside {
 main > aside > header {
   display: flex;
   align-items: stretch;
-  height: 40px;
+  height: var(--header-height);
   background-color: mediumseagreen;
   color: white;
-
   flex: 0 0 auto;
 }
 
 main > aside > header * {
-  font-size: 16px;
-  line-height: 40px;
+  font-size: 18px;
+  line-height: var(--header-height);
 }
 
 main > aside > header > h1 {
@@ -54,23 +55,33 @@ main > aside > header > h1 {
   flex: 1 1 auto;
   overflow: auto;
   padding: 1rem;
+  border-right: 1px solid silver;
 }
 
 #sidebar-content > h2 {
-  text-transform: uppercase;
   color: mediumseagreen;
-  font-size: 18px;
-  margin: 0.4rem 0;
+  font-size: 26px;
+  font-weight: normal;
+  margin: 2.5rem 0 1rem;
 }
 
-#sidebar-content > h2 ~ h2 {
-  margin-top: 2rem;
+#sidebar-content > h2:first-child {
+  margin-top: 0;
 }
 
 #sidebar-content > label {
   display: flex;
   align-items: baseline;
-  margin-top: 1.2rem;
+  margin-top: 2rem;
+}
+
+#sidebar-content > h2 + label {
+  margin-top: 0;
+}
+
+#sidebar-content > label select {
+  height: 28px;
+  font-size: 16px;
 }
 
 #sidebar-content > label > span {
@@ -79,10 +90,10 @@ main > aside > header > h1 {
 }
 
 #sidebar-content p.details {
-  color: #444;
-  font-size: 14px;
+  color: #666;
+  font-size: 16px;
   line-height: 1.5;
-  margin-top: 4px;
+  margin-top: 0.5rem;
 }
 
 #sidebar-content > p {
@@ -95,11 +106,9 @@ main > aside > header > h1 {
 }
 
 #sidebar-content span code {
-  background: #eeeeee;
-  border: 1px solid #dddddd;
-  border-radius: 2px;
-  font-size: 12px;
+  font-size: 16px;
   padding: 2px;
+  font-weight: normal;
 }
 
 #sidebar-content .info-table {
@@ -125,10 +134,12 @@ main > aside > header > h1 {
 
 #sidebar-content .info-table--is-about .info-table__label {
   font-weight: bold;
+  font-size: 16px;
 }
 
 #sidebar-content .info-table--is-about .info-table__detail {
   text-align: right;
+  font-size: 16px;
 }
 
 main > section {
@@ -149,7 +160,7 @@ main > section textarea {
   border: none;
   resize: none;
   font-family: 'Ubuntu Mono', monospace;
-  font-size: 14px;
+  font-size: 16px;
   width: 100%;
   box-sizing: border-box;
   padding: 1rem;
@@ -162,9 +173,9 @@ main > section textarea {
   color: #dddddd;
   white-space: pre;
   font-family: 'Ubuntu Mono', monospace;
-  font-size: 14px;
+  font-size: 16px;
   padding: 10px;
-  line-height: 1.4;
+  line-height: 1.5;
   user-select: text;
   cursor: text;
   min-height: 100%;
@@ -190,6 +201,7 @@ main > section textarea {
   padding: 5px 8px;
   border: 1px solid silver;
   background: white;
+  user-select: text;
 }
 
 #code-preview table th {
@@ -212,18 +224,16 @@ main > section > div > header {
   flex: 0 0 auto;
   display: flex;
   background: mediumseagreen;
-  font-weight: 600;
+  font-weight: normal;
 }
 
 main > section > div > header > div {
   flex: 0 0 auto;
-  height: 40px;
-  line-height: 40px;
+  height: var(--header-height);
+  line-height: var(--header-height);
   padding: 0 1rem;
   color: hsla(0, 0%, 100%, 0.7);
-  font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  font-size: 18px;
 }
 
 main > section > div > header > div.tab {
