@@ -1,0 +1,12 @@
+{
+  "name": "tblr",
+  "start_url": ".",
+  "description": "Create HTML tables from Excel tables or other plain text data.",
+  "lang": "en-US",
+  "display": "standalone",
+  "icons": [
+    { "src": "icon16.png", "sizes": "16x16", "type": "image/png" },
+    { "src": "icon32.png", "sizes": "32x32", "type": "image/png" },
+    { "src": "icon128.png", "sizes": "128x128", "type": "image/png" }
+  ]
+}

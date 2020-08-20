@@ -1,0 +1,273 @@
+﻿@font-face {
+  font-family: 'Ubuntu Mono';
+  src: local('Ubuntu Mono'), url('ubuntu-mono.ttf') format('truetype');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+
+body {
+  --header-height: 50px;
+  font-family: system-ui;
+  font-size: 18px;
+}
+
+main {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+}
+
+main > aside {
+  width: 400px;
+  background: #f8f8f8;
+  display: flex;
+  flex-direction: column;
+}
+
+main > aside > header {
+  display: flex;
+  align-items: stretch;
+  height: var(--header-height);
+  background-color: mediumseagreen;
+  color: white;
+  flex: 0 0 auto;
+}
+
+main > aside > header * {
+  font-size: 18px;
+  line-height: var(--header-height);
+}
+
+main > aside > header > h1 {
+  flex: 1 0 auto;
+  padding-left: 1rem;
+  font-weight: normal;
+}
+
+#sidebar-content {
+  flex: 1 1 auto;
+  overflow: auto;
+  padding: 1rem;
+  border-right: 1px solid silver;
+}
+
+#sidebar-content > h2 {
+  color: mediumseagreen;
+  font-size: 26px;
+  font-weight: normal;
+  margin: 2.5rem 0 1rem;
+}
+
+#sidebar-content > h2:first-child {
+  margin-top: 0;
+}
+
+#sidebar-content > label {
+  display: flex;
+  align-items: baseline;
+  margin-top: 2rem;
+}
+
+#sidebar-content > h2 + label {
+  margin-top: 0;
+}
+
+#sidebar-content > label select {
+  height: 28px;
+  font-size: 16px;
+}
+
+#sidebar-content > label > span {
+  flex: 1 1 auto;
+  font-weight: bold;
+}
+
+#sidebar-content p.details {
+  color: #666;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-top: 0.5rem;
+}
+
+#sidebar-content > p {
+  line-height: 1.6;
+  margin-bottom: 0.2rem;
+}
+
+#sidebar-content a {
+  color: mediumseagreen;
+}
+
+#sidebar-content span code {
+  font-size: 16px;
+  padding: 2px;
+  font-weight: normal;
+}
+
+#sidebar-content .info-table {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-row-gap: 10px;
+  margin-top: 0.8rem;
+}
+
+#sidebar-content .info-table--is-about {
+  grid-template-columns: 1fr auto;
+}
+
+#sidebar-content .info-table__counter {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+#sidebar-content .info-table .details {
+  grid-column-end: span 2;
+  margin-top: -5px;
+}
+
+#sidebar-content .info-table--is-about .info-table__label {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+#sidebar-content .info-table--is-about .info-table__detail {
+  text-align: right;
+  font-size: 16px;
+}
+
+main > section {
+  flex: 2 0 auto;
+  position: relative;
+}
+
+main > section + section {
+  flex: 3 0 auto;
+}
+
+main > section textarea {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: none;
+  resize: none;
+  font-family: 'Ubuntu Mono', monospace;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 1rem;
+  outline: none;
+  tab-size: 4;
+}
+
+#code-output {
+  background: #333333;
+  color: #dddddd;
+  white-space: pre;
+  font-family: 'Ubuntu Mono', monospace;
+  font-size: 16px;
+  padding: 10px;
+  line-height: 1.5;
+  user-select: text;
+  cursor: text;
+  min-height: 100%;
+  box-sizing: border-box;
+  display: inline-block;
+  min-width: 100%;
+}
+
+#code-preview {
+  background: #eeeeee;
+  height: 100%;
+  overflow: auto;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+#code-preview table {
+  display: inline-table;
+}
+
+#code-preview table td,
+#code-preview table th {
+  padding: 5px 8px;
+  border: 1px solid silver;
+  background: white;
+  user-select: text;
+}
+
+#code-preview table th {
+  font-weight: bold;
+}
+
+/* TABS */
+
+main > section > div {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+main > section > div > header {
+  flex: 0 0 auto;
+  display: flex;
+  background: mediumseagreen;
+  font-weight: normal;
+}
+
+main > section > div > header > div {
+  flex: 0 0 auto;
+  height: var(--header-height);
+  line-height: var(--header-height);
+  padding: 0 1rem;
+  color: hsla(0, 0%, 100%, 0.7);
+  font-size: 18px;
+}
+
+main > section > div > header > div.tab {
+  text-align: center;
+  box-sizing: border-box;
+  margin-right: 5px;
+  padding: 0 2rem;
+}
+
+.tab-element > .tabs > .tab:hover {
+  background: #41bf78;
+}
+
+.tab-element > .tabs > .tab.current {
+  color: white;
+  background: seagreen;
+  box-shadow: 0 2px 0 hsla(0, 0%, 0%, 0.3) inset;
+}
+
+main > section > div > header + div {
+  flex: 1 0 auto;
+  position: relative;
+}
+
+.tab-element > .tab-contents > .tab-body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+}
+
+.tab-element > .tab-contents > .tab-body.current {
+  display: block;
+  overflow: auto;
+}
