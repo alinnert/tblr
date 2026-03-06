@@ -30,6 +30,11 @@ addEventListener('message', (event) => {
 
   response.result = request.inputLines.map((row) => {
     const rowCells = row.split(inputColumnDelimiter)
+    rowCells.forEach((c) => {
+      if (c.length === 0) {
+        response.emptyCellsCount++
+      }
+    })
     response.columnsCount = Math.max(response.columnsCount, rowCells.length)
     return rowCells
   })

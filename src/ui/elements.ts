@@ -14,7 +14,7 @@ export const settingHtmlFormat = $id('setting-html-format', HTMLSelectElement)
 export const tabElements = $$('.tab')
 
 export const inputArea = $id('data-input', HTMLTextAreaElement)
-export const livePreviewStats = $id('data-stats', HTMLDivElement)
+export const dataStats = $id('data-stats', HTMLDivElement)
 
 export const outputTabContainerTabs = $$('.tab')
 export const outputTabContainerTabBodies = $$('.tab-body')

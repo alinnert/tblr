@@ -1,3 +1,4 @@
+import './parseInput/inputStatusbar'
 import './renderResult/htmlOutput'
 import './renderResult/livePreview'
 import './renderResult/livePreviewStatusbar'
