@@ -3,10 +3,10 @@ import {
   inputArea,
   settingColumnDelimiter,
   settingFillEmptyCells,
-  settingFirstColTh,
+  settingFirstColumnTh,
   settingFirstRowTh,
   settingHtmlFormat,
-  settingIncludeTableElement,
+  settingWrapWithTableElement,
   settingIndentCharacters,
   settingShowPreviewRows,
 } from './elements'
@@ -24,8 +24,8 @@ export const $showPreviewRowsOption = selectElementStore<ShowPreviewRows>(settin
 // HTML Output Settings
 export const $indentCharactersOption = selectElementStore(settingIndentCharacters)
 export const $fillEmptyCellsWithNbspOption = checkboxStore(settingFillEmptyCells)
-export const $wrapWithTableElementOption = checkboxStore(settingIncludeTableElement)
+export const $wrapWithTableElementOption = checkboxStore(settingWrapWithTableElement)
 export const $firstRowIsThOption = checkboxStore(settingFirstRowTh)
-export const $firstColumnIsThOption = checkboxStore(settingFirstColTh)
+export const $firstColumnIsThOption = checkboxStore(settingFirstColumnTh)
 export type HtmlFormat = 'compact' | 'one-line-per-row' | 'one-line-per-column'
 export const $htmlFormatOption = selectElementStore<HtmlFormat>(settingHtmlFormat)

@@ -13,7 +13,7 @@ effect([$inputData, $parseInputWorkerResponse], (inputData, response) => {
   const bytes = new TextEncoder().encode(inputData).length
 
   const stats: string[] = [
-    `<strong class="tnum">${response?.columnsCount.toLocaleString() ?? 0}</strong> cols × <strong class="tnum">${response?.rowsCount.toLocaleString() ?? 0}</strong> rows`,
+    `<strong class="tnum">${response?.columnsCount.toLocaleString() ?? 0}</strong> columns × <strong class="tnum">${response?.rowsCount.toLocaleString() ?? 0}</strong> rows`,
     `<strong class="tnum">${response?.emptyCellsCount.toLocaleString() ?? 0}</strong> empty cells`,
     `<strong class="tnum">${bytes.toLocaleString()}</strong> bytes`,
   ]

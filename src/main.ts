@@ -1,5 +1,6 @@
 import './renderResult/htmlOutput'
 import './renderResult/livePreview'
 import './renderResult/livePreviewStatusbar'
+import './ui/persistSettings'
 import './ui/supportTabInTextarea'
 import './ui/tabControls'
