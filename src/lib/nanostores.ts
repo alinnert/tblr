@@ -13,14 +13,14 @@ export function checkboxStore(
   return readonlyType($checked)
 }
 
-export function selectElementStore(
+export function selectElementStore<T extends string>(
   element: HTMLSelectElement,
-): ReadableAtom<string> {
-  const $value = atom(element.value)
+): ReadableAtom<T> {
+  const $value = atom(element.value as T)
 
   element.addEventListener('change', (event) => {
     if (!(event.currentTarget instanceof HTMLSelectElement)) return
-    $value.set(event.currentTarget.value)
+    $value.set(event.currentTarget.value as T)
   })
 
   return readonlyType($value)

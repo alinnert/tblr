@@ -18,10 +18,7 @@ export const settingIncludeTableElement = $id(
 )
 export const settingFirstRowTh = $id('setting-first-row-th', HTMLInputElement)
 export const settingFirstColTh = $id('setting-first-col-th', HTMLInputElement)
-export const settingCellOnNewLine = $id(
-  'setting-cells-on-new-line',
-  HTMLInputElement,
-)
+export const settingHtmlFormat = $id('setting-html-format', HTMLSelectElement)
 
 export const tabElements = $$('.tab-element .tabs .tab')
 

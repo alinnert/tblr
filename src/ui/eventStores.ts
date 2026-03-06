@@ -1,10 +1,10 @@
 import {
   inputArea,
-  settingCellOnNewLine,
   settingColumnDelimiter,
   settingFillEmptyCells,
   settingFirstColTh,
   settingFirstRowTh,
+  settingHtmlFormat,
   settingIncludeTableElement,
   settingIndentCharacters,
 } from '../constants/elements'
@@ -30,4 +30,6 @@ export const $wrapWithTableElementOption = checkboxStore(
 )
 export const $firstRowIsThOption = checkboxStore(settingFirstRowTh)
 export const $firstColumnIsThOption = checkboxStore(settingFirstColTh)
-export const $outputCellsOnNewLineOption = checkboxStore(settingCellOnNewLine)
+export type HtmlFormat = 'compact' | 'one-line-per-row' | 'one-line-per-column'
+export const $htmlFormatOption =
+  selectElementStore<HtmlFormat>(settingHtmlFormat)

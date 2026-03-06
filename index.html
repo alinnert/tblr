@@ -45,17 +45,6 @@
           <h2>HTML Output Settings</h2>
 
           <label>
-            <span>Indent characters</span>
-            <select id="setting-indent-characters">
-              <option value="tab">tab</option>
-              <option value="spaces1">1 space</option>
-              <option value="spaces2">2 spaces</option>
-              <option value="spaces4">4 spaces</option>
-              <option value="spaces8">8 spaces</option>
-            </select>
-          </label>
-
-          <label>
             <span>Fill empty cells with <code>&amp;nbsp;</code></span>
             <input type="checkbox" id="setting-fill-empty-cells" checked />
           </label>
@@ -83,11 +72,23 @@
           </label>
 
           <label>
-            <span>
-              Output each <code>&lt;th&gt;</code>/<code>&lt;td&gt;</code> on new
-              line
-            </span>
-            <input type="checkbox" id="setting-cells-on-new-line" />
+            <span>HTML format</span>
+            <select id="setting-html-format">
+              <option value="compact">Compact</option>
+              <option value="one-line-per-row">One line per row</option>
+              <option value="one-line-per-column">One line per cell</option>
+            </select>
+          </label>
+
+          <label>
+            <span>Indentation style</span>
+            <select id="setting-indent-characters">
+              <option value="tab">tab</option>
+              <option value="spaces1">1 space</option>
+              <option value="spaces2">2 spaces</option>
+              <option value="spaces4">4 spaces</option>
+              <option value="spaces8">8 spaces</option>
+            </select>
           </label>
 
           <h2>Statistics</h2>
@@ -150,7 +151,7 @@
       <section>
         <div class="tab-element" data-current-index="1">
           <header class="tabs">
-            <div class="tab current">Preview</div>
+            <div class="tab current">Live preview</div>
             <div class="tab">HTML</div>
           </header>
 
