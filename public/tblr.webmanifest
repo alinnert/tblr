@@ -1,7 +1,7 @@
 {
   "name": "tblr",
   "start_url": ".",
-  "description": "Create HTML tables from Excel tables or other plain text data.",
+  "description": "Create HTML tables from Excel, CSV, or similar data.",
   "lang": "en-US",
   "display": "standalone",
   "icons": [

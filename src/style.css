@@ -1,6 +1,34 @@
-﻿@font-face {
-  font-family: 'Ubuntu Mono';
-  src: local('Ubuntu Mono'), url('ubuntu-mono.ttf') format('truetype');
+@font-face {
+  font-family: InterVariable;
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  src: url('./fonts/InterVariable.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: InterVariable;
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+  src: url('./fonts/InterVariable-Italic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-weight: normal;
+  font-style: regular;
+  font-display: swap;
+  src: url('fonts/JetBrainsMono-Medium.woff2') format('woff2');
+}
+
+:root {
+  --app-bg: oklch(0.92 0.005 180);
+  --theme-color: oklch(0.4 0.2 180);
+  --theme-color-hover: oklch(from var(--theme-color) calc(l * 1.2) c h);
+  --theme-color-active: oklch(from var(--theme-color) calc(l * 0.7) c h);
+  --code-output-bg: oklch(0.35 0.02 180);
+  --code-output-text: oklch(0.95 0.02 180);
 }
 
 * {
@@ -11,8 +39,17 @@
 
 body {
   --header-height: 50px;
-  font-family: system-ui;
+  font-family: Inter, sans-serif;
   font-size: 18px;
+  background: var(--app-bg);
+}
+
+textarea {
+  outline: none;
+
+  &:focus {
+    outline: 3px solid rgb(from var(--theme-color) r g b / 0.4);
+  }
 }
 
 main {
@@ -25,8 +62,7 @@ main {
 }
 
 main > aside {
-  width: 400px;
-  background: #f8f8f8;
+  width: 340px;
   display: flex;
   flex-direction: column;
 }
@@ -35,7 +71,7 @@ main > aside > header {
   display: flex;
   align-items: stretch;
   height: var(--header-height);
-  background-color: mediumseagreen;
+  background: var(--theme-color);
   color: white;
   flex: 0 0 auto;
 }
@@ -55,14 +91,14 @@ main > aside > header > h1 {
   flex: 1 1 auto;
   overflow: auto;
   padding: 1rem;
-  border-right: 1px solid silver;
+  font-size: 15px;
 }
 
 #sidebar-content > h2 {
-  color: mediumseagreen;
-  font-size: 26px;
-  font-weight: normal;
-  margin: 2.5rem 0 1rem;
+  color: var(--theme-color);
+  font-size: 22px;
+  font-weight: 800;
+  margin: 3rem 0 1rem;
 }
 
 #sidebar-content > h2:first-child {
@@ -71,8 +107,8 @@ main > aside > header > h1 {
 
 #sidebar-content > label {
   display: flex;
-  align-items: baseline;
-  margin-top: 2rem;
+  align-items: center;
+  margin-top: 1.5rem;
 }
 
 #sidebar-content > h2 + label {
@@ -81,7 +117,7 @@ main > aside > header > h1 {
 
 #sidebar-content > label select {
   height: 28px;
-  font-size: 16px;
+  padding-inline: 8px;
 }
 
 #sidebar-content > label > span {
@@ -91,35 +127,40 @@ main > aside > header > h1 {
 
 #sidebar-content p.details {
   color: #666;
-  font-size: 16px;
-  line-height: 1.5;
-  margin-top: 0.5rem;
+  line-height: 1.6;
+  margin-top: 0.25rem;
 }
 
 #sidebar-content > p {
+  font-weight: 500;
   line-height: 1.6;
   margin-bottom: 0.2rem;
 }
 
 #sidebar-content a {
-  color: mediumseagreen;
+  color: var(--theme-color);
 }
 
 #sidebar-content span code {
-  font-size: 16px;
+  font-size: 14px;
   padding: 2px;
   font-weight: normal;
 }
 
 #sidebar-content .info-table {
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: 1fr 3fr;
   grid-row-gap: 10px;
   margin-top: 0.8rem;
 }
 
+#sidebar-content .info-table--is-stats .info-table__counter {
+  text-align: right;
+  font-feature-settings: 'tnum';
+}
+
 #sidebar-content .info-table--is-about {
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr;
 }
 
 #sidebar-content .info-table__counter {
@@ -132,16 +173,6 @@ main > aside > header > h1 {
   margin-top: -5px;
 }
 
-#sidebar-content .info-table--is-about .info-table__label {
-  font-weight: bold;
-  font-size: 16px;
-}
-
-#sidebar-content .info-table--is-about .info-table__detail {
-  text-align: right;
-  font-size: 16px;
-}
-
 main > section {
   flex: 2 0 auto;
   position: relative;
@@ -151,29 +182,33 @@ main > section + section {
   flex: 3 0 auto;
 }
 
-main > section textarea {
+#data-input {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 6px;
   right: 0;
-  bottom: 0;
+  background: white;
   border: none;
   resize: none;
-  font-family: 'Ubuntu Mono', monospace;
-  font-size: 16px;
-  width: 100%;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 15px;
   box-sizing: border-box;
   padding: 1rem;
-  outline: none;
   tab-size: 4;
+  border-radius: 6px;
+
+  @supports (corner-shape: squircle) {
+    border-radius: 10px;
+    corner-shape: squircle;
+  }
 }
 
 #code-output {
-  background: #333333;
-  color: #dddddd;
+  background: var(--code-output-bg);
+  color: var(--code-output-text);
   white-space: pre;
-  font-family: 'Ubuntu Mono', monospace;
-  font-size: 16px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  tab-size: 4;
   padding: 10px;
   line-height: 1.5;
   user-select: text;
@@ -182,14 +217,27 @@ main > section textarea {
   box-sizing: border-box;
   display: inline-block;
   min-width: 100%;
+  border-radius: 6px;
+  border: none;
+
+  @supports (corner-shape: squircle) {
+    border-radius: 10px;
+    corner-shape: squircle;
+  }
 }
 
 #code-preview {
-  background: #eeeeee;
+  background: white;
   height: 100%;
   overflow: auto;
   padding: 10px;
   box-sizing: border-box;
+  border-radius: 6px;
+
+  @supports (corner-shape: squircle) {
+    border-radius: 10px;
+    corner-shape: squircle;
+  }
 }
 
 #code-preview table {
@@ -198,10 +246,17 @@ main > section textarea {
 
 #code-preview table td,
 #code-preview table th {
-  padding: 5px 8px;
+  padding: 3px 6px;
   border: 1px solid silver;
   background: white;
   user-select: text;
+  border-radius: 4px;
+  text-align: left;
+
+  @supports (corner-shape: squircle) {
+    border-radius: 6px;
+    corner-shape: squircle;
+  }
 }
 
 #code-preview table th {
@@ -223,7 +278,7 @@ main > section > div {
 main > section > div > header {
   flex: 0 0 auto;
   display: flex;
-  background: mediumseagreen;
+  background: var(--theme-color);
   font-weight: normal;
 }
 
@@ -232,25 +287,40 @@ main > section > div > header > div {
   height: var(--header-height);
   line-height: var(--header-height);
   padding: 0 1rem;
-  color: hsla(0, 0%, 100%, 0.7);
+  color: hsla(0 0 100 / 0.7);
   font-size: 18px;
 }
 
-main > section > div > header > div.tab {
+.tab-element > .tabs {
+  gap: 6px;
+  padding: 6px;
+  height: var(--header-height);
+  box-sizing: border-box;
+}
+
+.tab-element > .tabs > .tab {
+  display: flex;
+  align-items: center;
   text-align: center;
   box-sizing: border-box;
-  margin-right: 5px;
-  padding: 0 2rem;
+  padding: 0 1rem;
+  height: auto;
+  line-height: initial;
+  border-radius: 6px;
+
+  @supports (corner-shape: squircle) {
+    border-radius: 10px;
+    corner-shape: squircle;
+  }
 }
 
 .tab-element > .tabs > .tab:hover {
-  background: #41bf78;
+  background: var(--theme-color-hover);
 }
 
 .tab-element > .tabs > .tab.current {
   color: white;
-  background: seagreen;
-  box-shadow: 0 2px 0 hsla(0, 0%, 0%, 0.3) inset;
+  background: var(--theme-color-active);
 }
 
 main > section > div > header + div {
@@ -260,14 +330,19 @@ main > section > div > header + div {
 
 .tab-element > .tab-contents > .tab-body {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 6px;
   display: none;
+
+  & > div {
+    position: absolute;
+    inset: 0;
+  }
 }
 
 .tab-element > .tab-contents > .tab-body.current {
   display: block;
-  overflow: auto;
+
+  & > div {
+    overflow: auto;
+  }
 }
