@@ -291,14 +291,14 @@ main > section > div > header > div {
   font-size: 18px;
 }
 
-.tab-element > .tabs {
+.tab-container > .tabs {
   gap: 6px;
   padding: 6px;
   height: var(--header-height);
   box-sizing: border-box;
 }
 
-.tab-element > .tabs > .tab {
+.tab-container > .tabs > .tab {
   display: flex;
   align-items: center;
   text-align: center;
@@ -314,11 +314,11 @@ main > section > div > header > div {
   }
 }
 
-.tab-element > .tabs > .tab:hover {
+.tab-container > .tabs > .tab:hover {
   background: var(--theme-color-hover);
 }
 
-.tab-element > .tabs > .tab.current {
+.tab-container > .tabs > .tab.current {
   color: white;
   background: var(--theme-color-active);
 }
@@ -328,7 +328,7 @@ main > section > div > header + div {
   position: relative;
 }
 
-.tab-element > .tab-contents > .tab-body {
+.tab-container > .tab-contents > .tab-body {
   position: absolute;
   inset: 6px;
   display: none;
@@ -339,7 +339,7 @@ main > section > div > header + div {
   }
 }
 
-.tab-element > .tab-contents > .tab-body.current {
+.tab-container > .tab-contents > .tab-body.current {
   display: block;
 
   & > div {

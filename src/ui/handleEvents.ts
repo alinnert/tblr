@@ -1,9 +1,9 @@
 import { inputArea, tabElements } from '../constants/elements'
-import { changeTab } from './changeTab'
-import { supportTab } from './supportTab'
+import { supportTabInTextarea } from './supportTabInTextarea'
+import { handleTabClick } from './tabContainer'
 
-inputArea.addEventListener('keydown', supportTab)
+inputArea.addEventListener('keydown', supportTabInTextarea)
 
 for (const element of tabElements) {
-  element.addEventListener('click', changeTab)
+  element.addEventListener('click', handleTabClick)
 }

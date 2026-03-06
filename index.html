@@ -149,17 +149,17 @@
       </section>
 
       <section>
-        <div class="tab-element" data-current-index="1">
+        <div class="tab-container" id="output-tab-container">
           <header class="tabs">
-            <div class="tab current">Live preview</div>
-            <div class="tab">HTML</div>
+            <div class="tab" data-tab-id="live-preview">Live preview</div>
+            <div class="tab" data-tab-id="html-output">HTML</div>
           </header>
 
           <div class="tab-contents">
-            <div class="tab-body current">
+            <div class="tab-body" data-tab-id="live-preview">
               <div id="code-preview"></div>
             </div>
-            <div class="tab-body">
+            <div class="tab-body" data-tab-id="html-output">
               <textarea readonly id="code-output"></textarea>
             </div>
           </div>
