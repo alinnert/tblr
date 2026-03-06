@@ -1,6 +1,6 @@
 import { computed, effect } from 'nanostores'
 import { codeOutputElement } from '../constants/elements'
-import { $parseInputWorkerResponse } from '../inputParser/parseInputWorkerManager'
+import { $parseInputWorkerResponse } from '../parseInput/parseInputWorkerManager'
 import { cellIsTh, type CellIsThOptions } from '../lib/cellIsTh'
 import { formatHtml } from '../lib/formatHtml'
 import { sanitizeHtmlElements } from '../lib/replacer'

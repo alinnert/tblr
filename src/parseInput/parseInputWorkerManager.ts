@@ -4,8 +4,8 @@ import {
   parseInputWorker,
   queueTask,
   startQueuedTask,
-} from '../workers/parseInput/parseInputWorker'
-import type { ParseInputWorkerResponse } from '../workers/parseInput/parseInputWorkerThread'
+} from './parseInputWorkerQueue'
+import type { ParseInputWorkerResponse } from './parseInputWorker'
 
 export const $parseInputWorkerResponse = atom<ParseInputWorkerResponse | null>(
   null,

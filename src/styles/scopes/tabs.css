@@ -1,0 +1,34 @@
+@scope (.tabs) {
+  :scope {
+    display: flex;
+    gap: var(--island-spacing);
+    padding: var(--island-spacing);
+    height: var(--header-height);
+    box-sizing: border-box;
+  }
+
+  .tab {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 1rem;
+    height: auto;
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+
+    @supports (corner-shape: squircle) {
+      border-radius: 10px;
+      corner-shape: squircle;
+    }
+
+    &:hover {
+      background: var(--theme-color-hover);
+    }
+
+    &.current {
+      color: white;
+      background: var(--theme-color-active);
+    }
+  }
+}

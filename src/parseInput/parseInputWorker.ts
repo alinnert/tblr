@@ -1,4 +1,4 @@
-import { inputColumnDelimiters } from '../../constants/inputColumnDelimiters'
+import { inputColumnDelimiters } from '../constants/inputColumnDelimiters'
 
 export type ParseInputWorkerRequest = {
   inputLines: string[]

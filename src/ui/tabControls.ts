@@ -2,12 +2,17 @@ import { atom, effect } from 'nanostores'
 import {
   outputTabContainerTabBodies,
   outputTabContainerTabs,
+  tabElements,
 } from '../constants/elements'
 
 const tabIds = ['live-preview', 'html-output'] as const
 type TabId = (typeof tabIds)[number]
 
 const $tabId = atom<TabId>('live-preview')
+
+for (const element of tabElements) {
+  element.addEventListener('click', handleTabClick)
+}
 
 export function handleTabClick(event: Event): void {
   const clickedTab = event.currentTarget

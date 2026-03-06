@@ -1,6 +1,6 @@
 import { computed, effect } from 'nanostores'
-import { codePreview } from '../constants/elements'
-import { $parseInputWorkerResponse } from '../inputParser/parseInputWorkerManager'
+import { livePreview } from '../constants/elements'
+import { $parseInputWorkerResponse } from '../parseInput/parseInputWorkerManager'
 import { cellIsTh } from '../lib/cellIsTh'
 import { $firstColumnIsThOption, $firstRowIsThOption } from '../ui/eventStores'
 
@@ -37,5 +37,5 @@ const $preview = computed(
 )
 
 effect($preview, (preview) => {
-  codePreview.replaceChildren(preview)
+  livePreview.replaceChildren(preview)
 })

@@ -5,7 +5,7 @@ import {
   asideInfoEmptyCells,
   asideInfoLines,
 } from '../constants/elements'
-import { $parseInputWorkerResponse } from '../inputParser/parseInputWorkerManager'
+import { $parseInputWorkerResponse } from '../parseInput/parseInputWorkerManager'
 import { $inputData } from '../ui/eventStores'
 
 effect($inputData, (inputData) => {

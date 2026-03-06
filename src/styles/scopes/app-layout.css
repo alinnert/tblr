@@ -1,0 +1,52 @@
+@scope (.app-layout) to (:scope > * > *) {
+  :scope {
+    display: grid;
+    grid-template-columns: 340px 1fr 1fr;
+    grid-template-rows: var(--header-height) 1fr;
+    position: fixed;
+    inset: var(--island-spacing);
+    z-index: 1000;
+  }
+
+  .title-background {
+    grid-row-start: 1;
+    grid-column-start: 1;
+    grid-column-end: -1;
+    background: var(--theme-color);
+    border-radius: 6px;
+
+    @supports (corner-shape: squircle) {
+      border-radius: 10px;
+      corner-shape: squircle;
+    }
+  }
+
+  .app-title {
+    grid-column-start: 1;
+  }
+
+  .input-title {
+    grid-column-start: 2;
+  }
+
+  .output-title {
+    grid-column-start: 3;
+  }
+
+  .title {
+    display: flex;
+    align-items: center;
+    grid-row: 1;
+  }
+
+  .content {
+    grid-row: 2;
+    display: grid;
+    overflow: hidden;
+  }
+
+  .input-area {
+    padding-block-start: var(--island-spacing);
+    padding-inline-start: var(--island-spacing);
+  }
+}

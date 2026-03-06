@@ -1,5 +1,7 @@
 import { inputArea } from '../constants/elements'
 
+inputArea.addEventListener('keydown', supportTabInTextarea)
+
 export function supportTabInTextarea(event: KeyboardEvent): void {
   if (event.key !== 'Tab') return
   if (!(event.currentTarget instanceof HTMLTextAreaElement)) return

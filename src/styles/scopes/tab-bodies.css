@@ -1,0 +1,23 @@
+@scope (.tab-bodies) to (.tab-body > *) {
+  :scope {
+    display: grid;
+    overflow: hidden;
+  }
+
+  .tab-body {
+    padding-block-start: var(--island-spacing);
+    padding-inline-start: var(--island-spacing);
+    display: none;
+    overflow: hidden;
+
+    &.current {
+      display: grid;
+    }
+
+    & > * {
+      position: absolute;
+      inset: 0;
+      overflow: auto;
+    }
+  }
+}

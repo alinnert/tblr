@@ -20,18 +20,15 @@ export const settingFirstRowTh = $id('setting-first-row-th', HTMLInputElement)
 export const settingFirstColTh = $id('setting-first-col-th', HTMLInputElement)
 export const settingHtmlFormat = $id('setting-html-format', HTMLSelectElement)
 
-export const tabElements = $$('.tab-container .tabs .tab')
+export const tabElements = $$('.tab')
 
 export const inputArea = $id('data-input', HTMLTextAreaElement)
 
-export const outputTabContainer = $id('output-tab-container', HTMLDivElement)
-export const outputTabContainerTabs =
-  outputTabContainer.querySelectorAll('.tab')
-export const outputTabContainerTabBodies =
-  outputTabContainer.querySelectorAll('.tab-body')
+export const outputTabContainerTabs = $$('.tab')
+export const outputTabContainerTabBodies = $$('.tab-body')
 
 export const codeOutputElement = $id('code-output', HTMLTextAreaElement)
-export const codePreview = $id('code-preview', HTMLDivElement)
+export const livePreview = $id('live-preview', HTMLDivElement)
 
 export const asideInfoChars = $id('aside-info-chars', HTMLDivElement)
 export const asideInfoLines = $id('aside-info-lines', HTMLDivElement)
