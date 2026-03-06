@@ -28,8 +28,7 @@
     margin-top: 0;
   }
 
-  label select {
-    height: 28px;
+  select {
     padding-inline: 8px;
   }
 
