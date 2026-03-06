@@ -1,8 +1,6 @@
 import { atom, readonlyType, type ReadableAtom } from 'nanostores'
 
-export function checkboxStore(
-  element: HTMLInputElement,
-): ReadableAtom<boolean> {
+export function checkboxStore(element: HTMLInputElement): ReadableAtom<boolean> {
   const $checked = atom(element.checked)
 
   element.addEventListener('change', (event) => {
@@ -13,9 +11,7 @@ export function checkboxStore(
   return readonlyType($checked)
 }
 
-export function selectElementStore<T extends string>(
-  element: HTMLSelectElement,
-): ReadableAtom<T> {
+export function selectElementStore<T extends string>(element: HTMLSelectElement): ReadableAtom<T> {
   const $value = atom(element.value as T)
 
   element.addEventListener('change', (event) => {
@@ -26,9 +22,7 @@ export function selectElementStore<T extends string>(
   return readonlyType($value)
 }
 
-export function textareaStore(
-  element: HTMLTextAreaElement,
-): ReadableAtom<string> {
+export function textareaStore(element: HTMLTextAreaElement): ReadableAtom<string> {
   const $value = atom(element.value)
 
   element.addEventListener('input', (event) => {

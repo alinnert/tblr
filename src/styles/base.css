@@ -1,18 +1,13 @@
 :root {
   --header-height: 50px;
-  --island-spacing: 6px;
+  --island-spacing: 4px;
+  --island-padding: 6px 10px;
+  --island-background: light-dark(white, oklch(from var(--app-bg) calc(l * 1.5) c h));
   --app-bg: light-dark(oklch(0.92 0.005 -90), oklch(0.3 0.04 -90));
-  --island-background: light-dark(
-    white,
-    oklch(from var(--app-bg) calc(l * 1.5) c h)
-  );
   --theme-color: light-dark(oklch(0.45 0.2 180), oklch(0.6 0.2 180));
   --theme-color-hover: oklch(from var(--theme-color) calc(l * 1.2) c h);
   --theme-color-active: oklch(from var(--theme-color) calc(l * 0.7) c h);
-  --muted-text-color: light-dark(
-    rgb(from black r g b / 0.6),
-    rgb(from white r g b / 0.6)
-  );
+  --muted-text-color: light-dark(rgb(from black r g b / 0.6), rgb(from white r g b / 0.6));
   --code-output-text: light-dark(
     oklch(from var(--theme-color) 0.5 0.15 h),
     oklch(from var(--theme-color) 0.9 0.07 h)
@@ -42,7 +37,7 @@ body {
 
 h1 {
   flex: 1 0 auto;
-  padding-left: 1rem;
+  padding: var(--island-padding);
   font-size: 18px;
   font-weight: normal;
   color: white;
@@ -56,10 +51,10 @@ textarea {
   font-size: 14px;
   line-height: 1.5;
   box-sizing: border-box;
-  padding: 8px 12px;
+  padding: var(--island-padding);
   tab-size: 4;
-  border-radius: 6px;
   background: var(--island-background);
+  border-radius: 6px;
 
   @supports (corner-shape: squircle) {
     border-radius: 10px;
@@ -74,4 +69,8 @@ textarea {
 
 #code-output {
   color: var(--code-output-text);
+}
+
+.tnum {
+  font-feature-settings: 'tnum';
 }

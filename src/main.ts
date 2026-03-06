@@ -1,5 +1,5 @@
-import './resultRenderer/makePreview'
-import './resultRenderer/makeRawHtml'
-import './resultRenderer/updateStats'
+import './renderResult/htmlOutput'
+import './renderResult/livePreview'
+import './renderResult/livePreviewStatusbar'
 import './ui/supportTabInTextarea'
 import './ui/tabControls'

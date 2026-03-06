@@ -1,5 +1,5 @@
 import { computed, effect } from 'nanostores'
-import { codeOutputElement } from '../constants/elements'
+import { codeOutputElement } from '../ui/elements'
 import { $parseInputWorkerResponse } from '../parseInput/parseInputWorkerManager'
 import { cellIsTh, type CellIsThOptions } from '../lib/cellIsTh'
 import { formatHtml } from '../lib/formatHtml'
@@ -48,10 +48,7 @@ const $rawHtml = computed(
             }
             const el = cellIsTh(cellIsThOptions) ? 'th' : 'td'
             const sanitizedCell = sanitizeHtmlElements(cell)
-            const filledCell =
-              sanitizedCell === '' && fillEmptyWithNbsp
-                ? '&nbsp;'
-                : sanitizedCell
+            const filledCell = sanitizedCell === '' && fillEmptyWithNbsp ? '&nbsp;' : sanitizedCell
             return `<${el}>${filledCell}</${el}>`
           })
           .join('')

@@ -1,4 +1,4 @@
-import { inputColumnDelimiters } from '../constants/inputColumnDelimiters'
+import { inputColumnDelimiters } from './inputColumnDelimiters'
 
 export type ParseInputWorkerRequest = {
   inputLines: string[]
@@ -24,8 +24,7 @@ addEventListener('message', (event) => {
     request,
   }
 
-  const inputColumnDelimiter =
-    inputColumnDelimiters[request.inputColumnDelimiterId]
+  const inputColumnDelimiter = inputColumnDelimiters[request.inputColumnDelimiterId]
 
   if (inputColumnDelimiter === undefined) return
 

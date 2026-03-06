@@ -1,9 +1,5 @@
 import { atom, effect } from 'nanostores'
-import {
-  outputTabContainerTabBodies,
-  outputTabContainerTabs,
-  tabElements,
-} from '../constants/elements'
+import { outputTabContainerTabBodies, outputTabContainerTabs, tabElements } from './elements'
 
 const tabIds = ['live-preview', 'html-output'] as const
 type TabId = (typeof tabIds)[number]

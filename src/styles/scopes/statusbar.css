@@ -1,0 +1,24 @@
+@scope (.statusbar) {
+  :scope {
+    display: flex;
+    gap: 16px;
+    background: var(--island-background);
+    padding: var(--island-padding);
+    border-radius: 6px;
+    font-size: 14px;
+
+    @supports (corner-shape: squircle) {
+      border-radius: 10px;
+      corner-shape: squircle;
+    }
+  }
+
+  .section {
+    display: flex;
+    gap: 16px;
+  }
+
+  .right {
+    margin-inline-start: auto;
+  }
+}

@@ -1,8 +1,8 @@
 @scope (.app-layout) to (:scope > * > *) {
   :scope {
     display: grid;
-    grid-template-columns: 340px 1fr 1fr;
-    grid-template-rows: var(--header-height) 1fr;
+    grid-template-columns: 340px 2fr 3fr;
+    grid-template-rows: var(--header-height) 1fr auto;
     position: fixed;
     inset: var(--island-spacing);
     z-index: 1000;
@@ -42,6 +42,8 @@
   .content {
     grid-row: 2;
     display: grid;
+    grid-template-rows: 1fr;
+    gap: var(--island-spacing);
     overflow: hidden;
   }
 

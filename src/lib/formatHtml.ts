@@ -1,4 +1,4 @@
-import { outputIndentCharacters } from '../constants/outputIndentCharacters'
+import { outputIndentCharacters } from '../renderResult/outputIndentCharacters'
 import type { HtmlFormat } from '../ui/eventStores'
 
 export type FormatHtmlOptions = {
@@ -7,11 +7,7 @@ export type FormatHtmlOptions = {
   htmlFormat: HtmlFormat
 }
 
-export function formatHtml({
-  input,
-  indentCharactersId,
-  htmlFormat,
-}: FormatHtmlOptions): string {
+export function formatHtml({ input, indentCharactersId, htmlFormat }: FormatHtmlOptions): string {
   const baseIndentLevel = input.startsWith('<table>') ? 1 : 0
   const indentCharacters = outputIndentCharacters[indentCharactersId]
   if (indentCharacters === undefined) {
@@ -40,8 +36,7 @@ function getFormatReplacer({
   htmlFormat,
 }: GetIndentReplacementTokensOptions) {
   return (match: string) => {
-    const indent = (level = 0) =>
-      indentCharacters.repeat(baseIndentLevel + level)
+    const indent = (level = 0) => indentCharacters.repeat(baseIndentLevel + level)
 
     if (htmlFormat === 'one-line-per-column') {
       return (

@@ -12,6 +12,8 @@
 
     &.current {
       display: grid;
+      grid-template-rows: 1fr;
+      gap: var(--island-spacing);
     }
 
     & > * {

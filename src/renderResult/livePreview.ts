@@ -1,19 +1,31 @@
 import { computed, effect } from 'nanostores'
-import { livePreview } from '../constants/elements'
-import { $parseInputWorkerResponse } from '../parseInput/parseInputWorkerManager'
 import { cellIsTh } from '../lib/cellIsTh'
-import { $firstColumnIsThOption, $firstRowIsThOption } from '../ui/eventStores'
+import { $parseInputWorkerResponse } from '../parseInput/parseInputWorkerManager'
+import { livePreview } from '../ui/elements'
+import {
+  $firstColumnIsThOption,
+  $firstRowIsThOption,
+  $showPreviewRowsOption,
+} from '../ui/eventStores'
+
+export const $previewRowsLimit = computed($showPreviewRowsOption, (showPreviewRows): number => {
+  return showPreviewRows === 'all' ? Infinity : Number.parseInt(showPreviewRows)
+})
 
 const $preview = computed(
-  [$parseInputWorkerResponse, $firstRowIsThOption, $firstColumnIsThOption],
-  (response, firstRowIsTh, firstColumnIsTh): string | Node => {
+  [$parseInputWorkerResponse, $firstRowIsThOption, $firstColumnIsThOption, $previewRowsLimit],
+  (response, firstRowIsTh, firstColumnIsTh, limit): string | Node => {
     if (response?.result === undefined) {
+      return ''
+    }
+
+    if (Number.isNaN(limit)) {
       return ''
     }
 
     const tableElement = document.createElement('table')
 
-    response?.result.forEach((row, rowIndex) => {
+    response.result.slice(0, limit).forEach((row, rowIndex) => {
       const trElement = document.createElement('tr')
 
       row.forEach((cell, columnIndex) => {

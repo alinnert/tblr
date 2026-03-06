@@ -1,4 +1,4 @@
-import { inputArea } from '../constants/elements'
+import { inputArea } from './elements'
 
 inputArea.addEventListener('keydown', supportTabInTextarea)
 

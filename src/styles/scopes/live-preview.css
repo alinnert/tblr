@@ -2,7 +2,7 @@
   :scope {
     background: var(--island-background);
     overflow: auto;
-    padding: 8px;
+    padding: 4px;
     box-sizing: border-box;
     border-radius: 6px;
 
@@ -19,9 +19,8 @@
 
   table {
     & :is(th, td) {
-      padding: 3px 6px;
-      border: 1px solid
-        light-dark(rgb(from black r g b / 0.2), rgb(from white r g b / 0.25));
+      padding: var(--island-padding);
+      border: 1px solid light-dark(rgb(from black r g b / 0.2), rgb(from white r g b / 0.25));
       user-select: text;
       text-align: left;
       font-size: 16px;

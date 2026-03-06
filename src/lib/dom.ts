@@ -3,10 +3,7 @@ type ElementConstructor<T> = {
   new (): T
 }
 
-export function $id<E extends HTMLElement>(
-  id: string,
-  elementType: ElementConstructor<E>,
-): E {
+export function $id<E extends HTMLElement>(id: string, elementType: ElementConstructor<E>): E {
   const element = document.getElementById(id)
 
   if (element === null) {
