@@ -1,33 +1,37 @@
-# <img src="src/icon128.png" alt="App-Logo" width="64" height="64"> tblr - html table creator for the web
+# <img src="src/icon128.png" alt="App-Logo" width="64" height="64"> tblr - HTML table creator for the web
 
 → **[Launch Tblr](https://alinnert.github.io/tblr/)**
 
 ## Description
 
-This app converts your data ‒ copy-pasted from Excel, a CSV or other text-based formats ‒ into an html table.
-
-You can also see some statistics about your data like number of rows, columns and empty cells.
+This app converts your data ‒ copy-pasted from Excel, a CSV or other text-based formats ‒ into an HTML table. You can also see some stats about your data like number of rows, columns and empty cells.
 
 ## Screenshots
 
-### Preview data in a table
+### Preview data
 
-![](screenshot-01.png)
+![](screenshot-live-preview-light.png)
+
+![](screenshot-live-preview-dark.png)
 
 ### Generate HTML
 
-![](screenshot-02.png)
-
-_Data in the screenshots is from [Mockaroo](https://mockaroo.com/)._
+![](screenshot-html-light.png)
 
 ## Known issues
 
-### No support for line breaks
+### No support for line breaks in spreadsheet cells
 
-It's not supported to paste tables from _Microsoft Office Excel_ that include line breaks.
+You can paste data from spreadsheet software like _Microsoft Office Excel_ that include line breaks but they will be interpreted like new table rows.
 
-_Why?_ ‒ There's technically no difference between line breaks and a new table row. There's no way to tell them apart.
+**Why?**
 
-## Links
+There's technically no difference between line breaks and a new table row. There's no way to tell them apart.
 
-- [Chrome OS App](https://chrome.google.com/webstore/detail/tblr/hfpbmgjmknhcakmgmfofmjloiecbocjj) (**deprecated!**)
+### Quotes are printed as is
+
+Real CSV data that enclose individual cells with quotes aren't supported yet. That means if a table cell contains a delimiter inside a cell that's enclosed with quotes it still gets interpreted as a column delimiter even though it shouldn't.
+
+**Why?**
+
+I need to implement a more advanced parser first. That can take some time.
