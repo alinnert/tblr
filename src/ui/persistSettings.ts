@@ -5,6 +5,7 @@ import {
   settingFirstRowTh,
   settingHtmlFormat,
   settingIndentCharacters,
+  settingShowDescriptions,
   settingShowPreviewRows,
   settingWrapWithTableElement,
 } from './elements'
@@ -21,6 +22,7 @@ const persistCheckboxElements: HTMLInputElement[] = [
   settingFirstRowTh,
   settingFirstColumnTh,
   settingWrapWithTableElement,
+  settingShowDescriptions,
 ]
 
 for (const element of persistSelectElements) {

@@ -42,7 +42,7 @@
         </div>
       </div>
 
-      <aside class="content app-sidebar">
+      <aside class="content app-sidebar" id="app-sidebar">
         <h2>Input Settings</h2>
 
         <label>
@@ -129,6 +129,16 @@
             <option value="spaces8">8 spaces</option>
           </select>
         </label>
+
+        <h2>General Settings</h2>
+        <label>
+          <span>Show settings descriptions</span>
+          <input type="checkbox" id="setting-show-descriptions" checked />
+        </label>
+        <p class="details">
+          Show descriptions like this one. Disable this if you prefer a more compact layout. You can
+          still read the descriptions by hovering over the setting names.
+        </p>
 
         <h2>About tblr</h2>
         <div class="info-table info-table--is-about">

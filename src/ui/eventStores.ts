@@ -9,6 +9,7 @@ import {
   settingWrapWithTableElement,
   settingIndentCharacters,
   settingShowPreviewRows,
+  settingShowDescriptions,
 } from './elements'
 
 // Input Data
@@ -29,3 +30,6 @@ export const $firstRowIsThOption = checkboxStore(settingFirstRowTh)
 export const $firstColumnIsThOption = checkboxStore(settingFirstColumnTh)
 export type HtmlFormat = 'compact' | 'one-line-per-row' | 'one-line-per-column'
 export const $htmlFormatOption = selectElementStore<HtmlFormat>(settingHtmlFormat)
+
+// General Setings
+export const $showDescriptionsOption = checkboxStore(settingShowDescriptions)

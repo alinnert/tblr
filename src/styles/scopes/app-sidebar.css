@@ -1,5 +1,6 @@
 @scope (.app-sidebar) {
   :scope {
+    display: block;
     flex: 1 1 auto;
     overflow: auto;
     padding-block: 16px;
@@ -42,6 +43,10 @@
     color: var(--muted-text-color);
     line-height: 1.5;
     margin-top: 0.25rem;
+
+    :scope.hide-descriptions & {
+      display: none;
+    }
   }
 
   p {
