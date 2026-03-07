@@ -1,11 +1,13 @@
-import { atom, effect } from 'nanostores'
+import { atom, computed, effect } from 'nanostores'
 import { $inputColumnDelimiterOption, $inputData } from '../ui/eventStores'
 import type { ParseInputWorkerResponse } from './parseInputWorker'
 import { parseInputWorker, queueTask, startQueuedTask } from './parseInputWorkerQueue'
 
 export const $parseInputWorkerResponse = atom<ParseInputWorkerResponse | null>(null)
 
-effect([$inputData, $inputColumnDelimiterOption], (inputData, inputColumnDelimiterId) => {
+const $trimmedInputData = computed($inputData, (inputData) => inputData.trim())
+
+effect([$trimmedInputData, $inputColumnDelimiterOption], (inputData, inputColumnDelimiterId) => {
   if (inputData === '') {
     $parseInputWorkerResponse.set(null)
     return
