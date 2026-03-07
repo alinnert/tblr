@@ -4,8 +4,17 @@
 
 ### Changed
 
-- Moved code base to Vite, TypeScript and Modules
-- Modernize code base
+- Small redesign, including new automatic dark mode
+- Settings are now stored in the browser, so they don't reset when you open the app the next time
+- Organize settings in sub groups
+- New options
+  - Show a limited amount of rows in the preview which can improve performance for large data sets
+  - Choose between three formatting styles of the generated HTML
+  - Choose how the generated HTML gets indented (tabs or different amount of spaces)
+  - Hide settings descriptions
+- Add button to copy generated HTML directly to clipboard
+- Noticeable performance improvements, especially for large data sets by eliminating unnecessary conversions, moving the conversion into a Web Worker (basically a separate thread), etc.
+- Moved code base to Vite, TypeScript and ES Modules and heavily modernize code base
 
 ## [1.3.1] - 2020-08-11
 
