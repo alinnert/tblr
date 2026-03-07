@@ -20,7 +20,7 @@
     }
 
     &[disabled] {
-      color: white;
+      opacity: 0.4;
     }
 
     &:not([disabled]):hover {
