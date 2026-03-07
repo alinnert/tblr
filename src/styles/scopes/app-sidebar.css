@@ -89,4 +89,16 @@
     grid-column-end: span 2;
     margin-top: -5px;
   }
+
+  .info-table__label:not(:first-child) {
+    margin-top: 10px;
+  }
+
+  .info-table ul {
+    padding-left: 24px;
+  }
+
+  .info-table li {
+    line-height: 1.8;
+  }
 }
