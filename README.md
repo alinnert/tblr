@@ -1,4 +1,4 @@
-# <img src="src/icon128.png" alt="App-Logo" width="64" height="64"> tblr - HTML table creator for the web
+# tblr - HTML table creator for the web
 
 → **[Launch Tblr](https://alinnert.github.io/tblr/)**
 
