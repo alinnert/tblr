@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="./src/styles/definitions/fonts.css" />
     <link rel="stylesheet" href="./src/styles/scopes/app-layout.css" />
     <link rel="stylesheet" href="./src/styles/scopes/app-sidebar.css" />
+    <link rel="stylesheet" href="./src/styles/scopes/toolbar.css" />
     <link rel="stylesheet" href="./src/styles/scopes/tabs.css" />
     <link rel="stylesheet" href="./src/styles/scopes/tab-bodies.css" />
     <link rel="stylesheet" href="./src/styles/scopes/statusbar.css" />
@@ -33,6 +34,11 @@
         <div class="tabs" data-tab-container="output-tabs">
           <div class="tab" data-tab-id="live-preview">Live preview</div>
           <div class="tab" data-tab-id="html-output">HTML</div>
+        </div>
+
+        <div class="toolbar">
+          <div id="parsing-process" class="info hidden">⏳ processing data...</div>
+          <button id="copy-html-button">Copy HTML to clipboard</button>
         </div>
       </div>
 

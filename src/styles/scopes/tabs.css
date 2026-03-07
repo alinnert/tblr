@@ -15,6 +15,7 @@
     height: auto;
     color: white;
     text-align: center;
+    font-size: 16px;
     border-radius: 6px;
 
     @supports (corner-shape: squircle) {

@@ -1,0 +1,41 @@
+@scope (.toolbar) {
+  :scope {
+    display: flex;
+    align-items: center;
+    margin-inline-start: auto;
+    padding: var(--island-padding);
+  }
+
+  button {
+    border: 1px solid rgb(from white r g b / 0.5);
+    background: rgb(from white r g b / 0.2);
+    padding: var(--island-padding);
+    font-weight: 500;
+    color: white;
+    border-radius: 6px;
+
+    @supports (corner-shape: squircle) {
+      border-radius: 10px;
+      corner-shape: squircle;
+    }
+
+    &[disabled] {
+      color: white;
+    }
+
+    &:not([disabled]):hover {
+      background: rgb(from white r g b / 0.3);
+    }
+
+    &:not([disabled]):active {
+      background: rgb(from white r g b / 0.4);
+    }
+  }
+
+  .info {
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding-inline: 16px;
+  }
+}

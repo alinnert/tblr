@@ -1,11 +1,12 @@
 @scope (.statusbar) {
   :scope {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr auto;
     gap: 16px;
     background: var(--island-background);
     padding: var(--island-padding);
-    border-radius: 6px;
     font-size: 14px;
+    border-radius: 6px;
 
     @supports (corner-shape: squircle) {
       border-radius: 10px;

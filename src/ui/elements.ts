@@ -13,8 +13,11 @@ export const settingHtmlFormat = $id('setting-html-format', HTMLSelectElement)
 
 export const tabElements = $$('.tab')
 
+export const copyHtmlButton = $id('copy-html-button', HTMLButtonElement)
+
 export const inputArea = $id('data-input', HTMLTextAreaElement)
 export const dataStats = $id('data-stats', HTMLDivElement)
+export const parsingProcess = $id('parsing-process', HTMLDivElement)
 
 export const outputTabContainerTabs = $$('.tab')
 export const outputTabContainerTabBodies = $$('.tab-body')

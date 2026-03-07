@@ -15,8 +15,6 @@ effect([$inputData, $inputColumnDelimiterOption], (inputData, inputColumnDelimit
 })
 
 parseInputWorker.addEventListener('message', (event) => {
-  const nextTaskIsRunning = startQueuedTask()
-  if (nextTaskIsRunning) return
-
+  startQueuedTask()
   $parseInputWorkerResponse.set(event.data)
 })

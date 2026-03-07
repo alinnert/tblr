@@ -13,7 +13,12 @@ import {
   $wrapWithTableElementOption,
 } from '../ui/eventStores'
 
-const $rawHtml = computed(
+export const htmlOutputSymbols = {
+  noInput: Symbol('No input data provided.'),
+  inProgress: Symbol('HTML is being generated.'),
+}
+
+export const $rawHtml = computed(
   [
     $parseInputWorkerResponse,
     $indentCharactersOption,
@@ -31,9 +36,9 @@ const $rawHtml = computed(
     firstRowIsTh,
     firstColumnIsTh,
     htmlFormat,
-  ): string => {
+  ): string | null => {
     if (response?.result === undefined) {
-      return ''
+      return null
     }
 
     const rowsHtml = response?.result
@@ -64,5 +69,5 @@ const $rawHtml = computed(
 )
 
 effect($rawHtml, (rawHtml) => {
-  codeOutputElement.value = rawHtml
+  codeOutputElement.value = rawHtml ?? 'No HTML could be generated.'
 })

@@ -1,5 +1,6 @@
-import { atom } from 'nanostores'
+import { atom, effect } from 'nanostores'
 import type { ParseInputWorkerRequest } from './parseInputWorker'
+import { parsingProcess } from '../ui/elements'
 
 export const $isTaskRunning = atom(false)
 const $queuedTask = atom<ParseInputWorkerRequest | null>(null)
@@ -8,23 +9,23 @@ const url = new URL('./parseInputWorker.ts', import.meta.url)
 export const parseInputWorker = new Worker(url, { type: 'module' })
 
 export function queueTask(task: ParseInputWorkerRequest): void {
-  if ($isTaskRunning.get()) {
-    $queuedTask.set(task)
+  $queuedTask.set(task)
+  if ($isTaskRunning.get()) return
+
+  startQueuedTask()
+}
+
+export function startQueuedTask() {
+  if ($queuedTask.get() === null) {
+    $isTaskRunning.set(false)
     return
   }
 
-  parseInputWorker.postMessage(task)
   $isTaskRunning.set(true)
+  parseInputWorker.postMessage($queuedTask.get())
+  $queuedTask.set(null)
 }
 
-export function startQueuedTask(): boolean {
-  if ($queuedTask.get() !== null) {
-    parseInputWorker.postMessage($queuedTask.get())
-    $isTaskRunning.set(true)
-    $queuedTask.set(null)
-    return true
-  }
-
-  $isTaskRunning.set(false)
-  return false
-}
+effect($isTaskRunning, (isTaskRunning) => {
+  parsingProcess.classList.toggle('visible', isTaskRunning)
+})

@@ -1,5 +1,5 @@
 :root {
-  --header-height: 50px;
+  --header-height: 44px;
   --island-spacing: 4px;
   --island-padding: 6px 10px;
   --island-background: light-dark(white, oklch(from var(--app-bg) calc(l * 1.5) c h));
@@ -73,4 +73,8 @@ textarea {
 
 .tnum {
   font-feature-settings: 'tnum';
+}
+
+.hidden:not(.visible) {
+  display: none;
 }
