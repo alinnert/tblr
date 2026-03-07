@@ -3,7 +3,8 @@
     flex: 1 1 auto;
     overflow: auto;
     padding-block: 16px;
-    padding-inline: 8px;
+    padding-inline-start: 8px;
+    padding-inline-end: 22px;
     font-size: 15px;
   }
 
