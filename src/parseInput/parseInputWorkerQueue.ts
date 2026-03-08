@@ -5,8 +5,9 @@ import { parsingProcess } from '../ui/elements'
 export const $isTaskRunning = atom(false)
 const $queuedTask = atom<ParseInputWorkerRequest | null>(null)
 
-const url = new URL('./parseInputWorker.ts', import.meta.url)
-export const parseInputWorker = new Worker(url, { type: 'module' })
+export const parseInputWorker = new Worker(new URL('./parseInputWorker.ts', import.meta.url), {
+  type: 'module',
+})
 
 export function queueTask(task: ParseInputWorkerRequest): void {
   $queuedTask.set(task)
